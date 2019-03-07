@@ -1,0 +1,726 @@
+********************************************************************************
+product = Open Liberty 19.0.0.2 (wlp-1.0.25.201902061549)
+wlp.install.dir = /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/
+java.home = /usr/lib/jvm/java-ibm-x86_64-80/jre
+java.version = 1.8.0_151
+java.runtime = Java(TM) SE Runtime Environment (8.0.5.5 - pxa6480sr5fp5-20171114_01(SR5 FP5))
+os = Linux (4.4.0-142-generic; amd64) (en_GB)
+process = 5639@dung
+trace.specification = *=info:logservice=detail
+********************************************************************************
+[01/03/19 15:57:27:140 GMT] 00000001 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0018I: The trace state has been changed. The new trace state is *=info:logservice=detail.
+[01/03/19 15:57:27:166 GMT] 00000001 id=00000000 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server FeatureUpdate_com.ibm.ws.messaging.comms.server has been launched.
+[01/03/19 15:57:28:392 GMT] 0000001e id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server-specific-invariants.xml
+[01/03/19 15:57:28:399 GMT] 0000001e id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestPorts.xml
+[01/03/19 15:57:28:407 GMT] 0000001e id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestCommon.xml
+[01/03/19 15:57:28:593 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0018I: The trace state has been changed. The new trace state is *=info:CONFIG_SOURCE...servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server.xml=info:logservice=detail.
+[01/03/19 15:57:28:925 GMT] 00000001 id=00000000 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 2.041 seconds
+[01/03/19 15:57:29:096 GMT] 00000027 id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[01/03/19 15:57:31:052 GMT] 00000029 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host *  (IPv6) port 8030.
+[01/03/19 15:57:31:091 GMT] 0000001e id=00000000 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[01/03/19 15:57:31:400 GMT] 0000001e id=00000000 com.ibm.ws.timedexit.internal.TimedExitComponent             A TE9900A: Timed Exit Enabled
+[01/03/19 15:57:31:468 GMT] 00000027 id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [servlet-3.1, timedexit-1.0].
+[01/03/19 15:57:31:468 GMT] 00000027 id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 2.537 seconds.
+[01/03/19 15:57:31:469 GMT] 00000027 id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The server FeatureUpdate_com.ibm.ws.messaging.comms.server is ready to run a smarter planet.
+[01/03/19 15:57:42:564 GMT] 00000034 id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[01/03/19 15:57:42:569 GMT] 00000034 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server-specific-invariants.xml
+[01/03/19 15:57:42:570 GMT] 00000034 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestPorts.xml
+[01/03/19 15:57:42:570 GMT] 00000034 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestCommon.xml
+[01/03/19 15:57:42:622 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0018I: The trace state has been changed. The new trace state is *=info:CONFIG_SOURCE...files/blank_server.xml=info:logservice=detail.
+[01/03/19 15:57:42:623 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0040I: The configured trace state included the following specifications that do not match any loggers currently registered in the server: CONFIG_SOURCE...files/blank_server.xml=info Ignore this message if the trace specifications CONFIG_SOURCE...files/blank_server.xml=info are valid.
+[01/03/19 15:57:42:627 GMT] 00000032 id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: The server configuration was successfully updated in 0.065 seconds.
+[01/03/19 15:57:44:316 GMT] 00000032 id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[01/03/19 15:57:44:319 GMT] 00000032 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server-specific-invariants.xml
+[01/03/19 15:57:44:320 GMT] 00000032 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestPorts.xml
+[01/03/19 15:57:44:321 GMT] 00000032 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestCommon.xml
+[01/03/19 15:57:44:359 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0018I: The trace state has been changed. The new trace state is *=info:CONFIG_SOURCE...files/server2.xml=info:SIBCommunications=info:SIBJFapChannel=info:SSL=all:SSLChannel=info.
+[01/03/19 15:57:44:360 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0040I: The configured trace state included the following specifications that do not match any loggers currently registered in the server: CONFIG_SOURCE...files/server2.xml=info:SIBCommunications=info:SIBJFapChannel=info:SSL=all:SSLChannel=info Ignore this message if the trace specifications CONFIG_SOURCE...files/server2.xml=info:SIBCommunications=info:SIBJFapChannel=info:SSL=all:SSLChannel=info are valid.
+[01/03/19 15:57:44:418 GMT] 00000032 id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[01/03/19 15:57:44:954 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 BundleEvent INSTALLED 
+                                                                                                               LoggerName:Events.Bundle
+                                                                                                               Event:org.osgi.framework.BundleEvent[source=com.ibm.ws.ssl_1.1.25.201902061549 [105]]
+[01/03/19 15:57:45:263 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 BundleEvent RESOLVED 
+                                                                                                               LoggerName:Events.Bundle
+                                                                                                               Event:org.osgi.framework.BundleEvent[source=com.ibm.ws.ssl_1.1.25.201902061549 [105]]
+[01/03/19 15:57:45:420 GMT] 00000032 id=00000000 com.ibm.ws.config.xml.internal.ConfigValidator               A CWWKG0102I: Found conflicting settings for wasJmsEndpoint configuration.
+  Property host has conflicting values:
+    Value localhost is set in file:/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestPorts.xml.
+    Value * is set in file:/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server.xml.
+  Property host will be set to *.
+
+[01/03/19 15:57:45:663 GMT] 00000032 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel InboundJmsCommsEndpoint has been started and is now listening for requests on host *  (IPv6) port 17010.
+[01/03/19 15:57:46:181 GMT] 00000032 id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSIS1553I: The minimum reserved size in the configuration information of the permanent store file is 20,971,520 bytes. The maximum size is 209,715,200 bytes.
+[01/03/19 15:57:46:185 GMT] 00000032 id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSIS1557I: The minimum reserved size in the configuration information of the temporary store file is 20,971,520 bytes. The maximum size is 209,715,200 bytes.
+[01/03/19 15:57:46:907 GMT] 00000032 id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSID0108I: JMS server has started.  
+[01/03/19 15:57:47:008 GMT] 00000032 id=00000000 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[01/03/19 15:57:47:053 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 BundleEvent STARTING 
+                                                                                                               LoggerName:Events.Bundle
+                                                                                                               Event:org.osgi.framework.BundleEvent[source=com.ibm.ws.ssl_1.1.25.201902061549 [105]]
+[01/03/19 15:57:47:054 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 BundleEvent STARTED 
+                                                                                                               LoggerName:Events.Bundle
+                                                                                                               Event:org.osgi.framework.BundleEvent[source=com.ibm.ws.ssl_1.1.25.201902061549 [105]]
+[01/03/19 15:57:47:063 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent REGISTERED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.ws.ssl.KeyStoreService](id=319, pid=null)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.ws.ssl.KeyStoreService}={service.id=319, KeyStore.target=(id=*), service.bundleid=105, service.scope=bundle, service.vendor=IBM, component.name=com.ibm.ws.ssl.internal.KeyStoreServiceImpl, component.id=231}]
+[01/03/19 15:57:47:086 GMT] 00000032 id=f8afd744 com.ibm.ws.ssl.internal.KeystoreConfigurationFactory         1 activate 
+                                                                                                               {service.pid=com.ibm.ws.ssl.keystore, service.vendor=IBM, component.name=com.ibm.ws.ssl.internal.KeystoreConfigurationFactory, component.id=232}
+[01/03/19 15:57:47:090 GMT] 00000022 id=f8afd744 com.ibm.ws.ssl.internal.KeystoreConfigurationFactory         1 updated keystore com.ibm.ws.ssl.keystore_29 
+                                                                                                               {config.displayId=keyStore[defaultKeyStore], config.id=com.ibm.ws.ssl.keystore[defaultKeyStore], config.overrides=true, config.source=file, fileBased=true, genKeyHostName=localhost, id=defaultKeyStore, location=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server//resources/security/mykeynew.jks, password=*****, pollingRate=500, readOnly=false, service.factoryPid=com.ibm.ws.ssl.keystore, service.pid=com.ibm.ws.ssl.keystore_29, type=PKCS12, updateTrigger=mbean, valid=true}
+[01/03/19 15:57:47:108 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent REGISTERED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[org.osgi.service.cm.ManagedServiceFactory](id=320, pid=com.ibm.ws.ssl.keystore)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={org.osgi.service.cm.ManagedServiceFactory}={service.id=320, service.bundleid=105, service.scope=bundle, service.vendor=IBM, service.pid=com.ibm.ws.ssl.keystore, component.name=com.ibm.ws.ssl.internal.KeystoreConfigurationFactory, component.id=232}]
+[01/03/19 15:57:47:127 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent REGISTERED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.ws.ssl.optional.SSLSupportOptional](id=321, pid=com.ibm.ws.ssl.default)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.ws.ssl.optional.SSLSupportOptional}={sslRef=defaultSSLConfig, service.id=321, service.bundleid=105, service.scope=bundle, config.overrides=true, component.name=com.ibm.ws.ssl.internal.SSLComponent, component.id=234, httpHostNameVerification=false, KeyStore.target=(id=*), config.source=file, Repertoire.target=(id=*), service.vendor=IBM, service.pid=com.ibm.ws.ssl.default, config.displayId=sslDefault}]
+[01/03/19 15:57:47:188 GMT] 00000032 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         1 Activated: {component.name=com.ibm.ws.ssl.internal.SSLComponent, config.source=file, httpHostNameVerification=false, service.vendor=IBM, sslRef=defaultSSLConfig, KeyStore.target=(id=*), service.pid=com.ibm.ws.ssl.default, Repertoire.target=(id=*), config.overrides=true, component.id=234, config.displayId=sslDefault}
+[01/03/19 15:57:47:188 GMT] 00000032 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         3 Java vendor: IBM Java major:  8 Java minor: 0 Java micro: 151
+[01/03/19 15:57:47:189 GMT] 00000032 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         1 transportSecurityEnable is not installed
+[01/03/19 15:57:47:189 GMT] 00000032 id=6751656b com.ibm.ws.ssl.internal.GenericSSLConfigService              1 activate sslDefault 
+                                                                                                               {component.name=com.ibm.ws.ssl.internal.SSLComponent, config.source=file, httpHostNameVerification=false, service.vendor=IBM, sslRef=defaultSSLConfig, KeyStore.target=(id=*), service.pid=com.ibm.ws.ssl.default, Repertoire.target=(id=*), config.overrides=true, component.id=234, config.displayId=sslDefault}
+[01/03/19 15:57:47:189 GMT] 00000032 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         1 Processing configuration true
+[01/03/19 15:57:47:211 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:47:212 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getProviderFromProviderList Entry 
+[01/03/19 15:57:47:241 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           3 Provider name [0]: IBMJSSE2
+[01/03/19 15:57:47:242 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getProviderFromProviderList -> IBMJSSE2 Exit 
+[01/03/19 15:57:47:242 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           3 Provider name [0]: IBMJSSE2
+[01/03/19 15:57:47:276 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 handlers already initialized 
+[01/03/19 15:57:47:277 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.IBMJSSEProvider                      3 Created an IBM JSSE provider
+[01/03/19 15:57:47:277 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:47:278 GMT] 00000032 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:47:278 GMT] 00000032 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:47:278 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > initializeSSL Entry 
+[01/03/19 15:57:47:279 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > loadGlobalProperties Entry 
+[01/03/19 15:57:47:279 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: service.vendor=IBM
+[01/03/19 15:57:47:279 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: sslRef=defaultSSLConfig
+[01/03/19 15:57:47:279 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: config.displayId=sslDefault
+[01/03/19 15:57:47:280 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: component.name=com.ibm.ws.ssl.internal.SSLComponent
+[01/03/19 15:57:47:280 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: config.source=file
+[01/03/19 15:57:47:280 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: com.ibm.ssl.defaultAlias=defaultSSLConfig
+[01/03/19 15:57:47:280 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: config.overrides=true
+[01/03/19 15:57:47:280 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: KeyStore.target=(id=*)
+[01/03/19 15:57:47:280 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: Repertoire.target=(id=*)
+[01/03/19 15:57:47:281 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: httpHostNameVerification=false
+[01/03/19 15:57:47:281 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: service.pid=com.ibm.ws.ssl.default
+[01/03/19 15:57:47:281 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: com.ibm.ssl.performURLHostNameVerification=false
+[01/03/19 15:57:47:281 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < loadGlobalProperties Exit 
+[01/03/19 15:57:47:282 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > isTransportSecurityEnabled Entry 
+[01/03/19 15:57:47:282 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < isTransportSecurityEnabled false Exit 
+[01/03/19 15:57:47:282 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > setDefaultSSLContext Entry 
+[01/03/19 15:57:47:282 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > getDefaultSSLConfig Entry 
+[01/03/19 15:57:47:283 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 getGlobalProperty -> com.ibm.ssl.defaultAlias=defaultSSLConfig
+[01/03/19 15:57:47:283 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 defaultAlias: defaultSSLConfig
+[01/03/19 15:57:47:283 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < defaultAlias is null Exit 
+[01/03/19 15:57:47:283 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 There is no default SSLConfig.
+[01/03/19 15:57:47:283 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < setDefaultSSLContext Exit 
+[01/03/19 15:57:47:284 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 getGlobalProperty -> com.ibm.ssl.performURLHostNameVerification=false
+[01/03/19 15:57:47:284 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 com.ibm.ssl.performURLHostNameVerification disabled
+[01/03/19 15:57:47:286 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             > saveAliasInformation Entry 
+[01/03/19 15:57:47:287 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             < saveAliasInformation Exit 
+[01/03/19 15:57:47:287 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Total Number of SSLConfigs: 0
+[01/03/19 15:57:47:288 GMT] 00000032 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < initializeSSL Exit 
+[01/03/19 15:57:47:289 GMT] 00000032 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent MODIFIED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.ws.ssl.optional.SSLSupportOptional](id=321, pid=com.ibm.ws.ssl.default)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.ws.ssl.optional.SSLSupportOptional}={keystoreIds=[], sslRef=defaultSSLConfig, service.id=321, service.bundleid=105, service.scope=bundle, config.overrides=true, repertoireIds=[], component.name=com.ibm.ws.ssl.internal.SSLComponent, component.id=234, httpHostNameVerification=false, KeyStore.target=(id=*), config.source=file, repertoirePIDs=[], Repertoire.target=(id=*), service.vendor=IBM, service.pid=com.ibm.ws.ssl.default, config.displayId=sslDefault}]
+[01/03/19 15:57:47:291 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 Found store under [/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks]
+[01/03/19 15:57:47:291 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             > setUpInternalProperties Entry 
+[01/03/19 15:57:47:291 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:292 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:292 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             < setUpInternalProperties Exit 
+[01/03/19 15:57:47:292 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             > initializeKeyStore Entry 
+[01/03/19 15:57:47:292 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 Initializing keystore at startup.
+[01/03/19 15:57:47:292 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             > do_getKeyStore Entry  
+                                                                                                               true
+                                                                                                               true
+[01/03/19 15:57:47:295 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 Initializing KeyStore: defaultKeyStore
+[01/03/19 15:57:47:302 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 File path for store: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks of type: JKS
+[01/03/19 15:57:47:303 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 Loading keyStore (filebased)
+[01/03/19 15:57:47:303 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:47:303 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:47:303 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 KeyStore.getInstance(JKS, null)
+[01/03/19 15:57:47:349 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 alias: default
+[01/03/19 15:57:47:350 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 do_getKeyStore (initialized)
+[01/03/19 15:57:47:350 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             I Successfully loaded default keystore: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks of type: JKS
+[01/03/19 15:57:47:353 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             < do_getKeyStore Exit  
+                                                                                                               java.security.KeyStore@65f8aef3
+[01/03/19 15:57:47:353 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             < initializeKeyStore Exit 
+[01/03/19 15:57:47:392 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        > addKeyStoreToMap: defaultKeyStore, ks=WSKeyStore.toString() {
+id=defaultKeyStore
+config.source=file
+com.ibm.ssl.keyStoreFileBased=true
+com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+service.factoryPid=com.ibm.ws.ssl.keystore
+com.ibm.ssl.alias=defaultKeyStore
+com.ibm.ssl.keyStoreType=JKS
+com.ibm.ssl.keyStoreInitializeAtStartup=false
+service.pid=com.ibm.ws.ssl.keystore_29
+com.ibm.ssl.keyStoreReadOnly=false
+com.ibm.ssl.keyStoreCreateCMSStash=false
+config.displayId=keyStore[defaultKeyStore]
+config.overrides=true
+com.ibm.ssl.keyStorePassword=*************
+com.ibm.ssl.keyStoreName=defaultKeyStore
+config.id=com.ibm.ws.ssl.keystore[defaultKeyStore]
+} Entry 
+[01/03/19 15:57:47:392 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        < addKeyStoreToMap Exit 
+[01/03/19 15:57:47:399 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        > addKeyStoreToMap: com.ibm.ws.ssl.keystore_29, ks=WSKeyStore.toString() {
+id=defaultKeyStore
+config.source=file
+com.ibm.ssl.keyStoreFileBased=true
+com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+service.factoryPid=com.ibm.ws.ssl.keystore
+com.ibm.ssl.alias=defaultKeyStore
+com.ibm.ssl.keyStoreType=JKS
+com.ibm.ssl.keyStoreInitializeAtStartup=false
+service.pid=com.ibm.ws.ssl.keystore_29
+com.ibm.ssl.keyStoreReadOnly=false
+com.ibm.ssl.keyStoreCreateCMSStash=false
+config.displayId=keyStore[defaultKeyStore]
+config.overrides=true
+com.ibm.ssl.keyStorePassword=*************
+com.ibm.ssl.keyStoreName=defaultKeyStore
+config.id=com.ibm.ws.ssl.keystore[defaultKeyStore]
+} Entry 
+[01/03/19 15:57:47:400 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        < addKeyStoreToMap Exit 
+[01/03/19 15:57:47:403 GMT] 00000022 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent REGISTERED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.ws.ssl.internal.KeystoreConfig](id=334, pid=com.ibm.ws.ssl.keystore_29)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.ws.ssl.internal.KeystoreConfig}={fileBased=true, updateTrigger=mbean, location=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server//resources/security/mykeynew.jks, service.id=334, com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks, service.bundleid=105, service.scope=singleton, config.overrides=true, genKeyHostName=localhost, com.ibm.ssl.alias=defaultKeyStore, password=*****, config.id=com.ibm.ws.ssl.keystore[defaultKeyStore], config.source=file, readOnly=false, service.factoryPid=com.ibm.ws.ssl.keystore, valid=true, pollingRate=500, id=defaultKeyStore, config.displayId=keyStore[defaultKeyStore], service.pid=com.ibm.ws.ssl.keystore_29, type=PKCS12}]
+[01/03/19 15:57:47:405 GMT] 00000022 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent REGISTERED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.ws.ssl.internal.RepertoireConfigService, com.ibm.wsspi.ssl.SSLConfiguration](id=335, pid=com.ibm.ws.ssl.repertoire_45)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.ws.ssl.internal.RepertoireConfigService, com.ibm.wsspi.ssl.SSLConfiguration}={clientAuthenticationSupported=false, service.id=335, keyStoreRef=com.ibm.ws.ssl.keystore_29, service.bundleid=105, service.scope=bundle, config.overrides=true, component.name=com.ibm.ws.ssl.internal.RepertoireConfigService, clientAuthentication=false, TrustStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), component.id=233, effectiveTrustStore=com.ibm.ws.ssl.keystore_29, config.id=com.ibm.ws.ssl.repertoire[defaultSSLConfig], KeyStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), securityLevel=HIGH, config.source=file, service.factoryPid=com.ibm.ws.ssl.repertoire, id=defaultSSLConfig, service.vendor=IBM, service.pid=com.ibm.ws.ssl.repertoire_45, config.displayId=ssl[defaultSSLConfig]}]
+[01/03/19 15:57:47:415 GMT] 00000022 id=da11e775 com.ibm.ws.ssl.internal.RepertoireConfigService              3 set keystore defaultKeyStore 
+                                                                                                               {location=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server//resources/security/mykeynew.jks, password=*****, type=PKCS12, pollingRate=500, config.displayId=keyStore[defaultKeyStore], updateTrigger=mbean, com.ibm.ssl.alias=defaultKeyStore, fileBased=true, objectClass=[Ljava.lang.String;@76f03bc8, genKeyHostName=localhost, com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks, service.id=334, config.source=file, id=defaultKeyStore, config.id=com.ibm.ws.ssl.keystore[defaultKeyStore], service.factoryPid=com.ibm.ws.ssl.keystore, valid=true, service.pid=com.ibm.ws.ssl.keystore_29, config.overrides=true, readOnly=false, service.scope=singleton, service.bundleid=105}
+[01/03/19 15:57:47:416 GMT] 00000022 id=da11e775 com.ibm.ws.ssl.internal.RepertoireConfigService              3 set truststore defaultKeyStore 
+                                                                                                               {location=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server//resources/security/mykeynew.jks, password=*****, type=PKCS12, pollingRate=500, config.displayId=keyStore[defaultKeyStore], updateTrigger=mbean, com.ibm.ssl.alias=defaultKeyStore, fileBased=true, objectClass=[Ljava.lang.String;@5d7d5767, genKeyHostName=localhost, com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks, service.id=334, config.source=file, id=defaultKeyStore, config.id=com.ibm.ws.ssl.keystore[defaultKeyStore], service.factoryPid=com.ibm.ws.ssl.keystore, valid=true, service.pid=com.ibm.ws.ssl.keystore_29, config.overrides=true, readOnly=false, service.scope=singleton, service.bundleid=105}
+[01/03/19 15:57:47:417 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 initializeSSL on defaultSSLConfig 
+                                                                                                               {component.name=com.ibm.ws.ssl.internal.RepertoireConfigService, id=defaultSSLConfig, config.source=file, clientAuthentication=false, clientAuthenticationSupported=false, service.vendor=IBM, service.factoryPid=com.ibm.ws.ssl.repertoire, TrustStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), KeyStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), service.pid=com.ibm.ws.ssl.repertoire_45, config.overrides=true, component.id=233, config.displayId=ssl[defaultSSLConfig], securityLevel=HIGH, config.id=com.ibm.ws.ssl.repertoire[defaultSSLConfig], effectiveTrustStore=com.ibm.ws.ssl.keystore_29, keyStoreRef=com.ibm.ws.ssl.keystore_29}
+[01/03/19 15:57:47:417 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > parseSSLConfig: defaultSSLConfig Entry  
+                                                                                                               {component.name=com.ibm.ws.ssl.internal.RepertoireConfigService, id=defaultSSLConfig, config.source=file, clientAuthentication=false, clientAuthenticationSupported=false, service.vendor=IBM, service.factoryPid=com.ibm.ws.ssl.repertoire, TrustStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), KeyStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), service.pid=com.ibm.ws.ssl.repertoire_45, config.overrides=true, component.id=233, config.displayId=ssl[defaultSSLConfig], securityLevel=HIGH, config.id=com.ibm.ws.ssl.repertoire[defaultSSLConfig], effectiveTrustStore=com.ibm.ws.ssl.keystore_29, keyStoreRef=com.ibm.ws.ssl.keystore_29}
+[01/03/19 15:57:47:417 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > parseSecureSocketLayer Entry 
+[01/03/19 15:57:47:431 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStoreType: null
+[01/03/19 15:57:47:431 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStoreType: null
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStore: null
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStoreName: null
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStorePassword: null
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStore: null
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStoreName: null
+[01/03/19 15:57:47:432 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStorePassword: null
+[01/03/19 15:57:47:433 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        3 Returning a keyStore for name: com.ibm.ws.ssl.keystore_29
+[01/03/19 15:57:47:433 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Adding keystore properties from KeyStore object.
+[01/03/19 15:57:47:433 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > addSSLPropertiesFromKeyStore Entry 
+[01/03/19 15:57:47:433 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < addSSLPropertiesFromKeyStore Exit 
+[01/03/19 15:57:47:433 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Adding truststore properties from KeyStore object.
+[01/03/19 15:57:47:433 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > addSSLPropertiesFromTrustStore Entry 
+[01/03/19 15:57:47:434 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < addSSLPropertiesFromTrustStore Exit 
+[01/03/19 15:57:47:434 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting default KeyManager: IbmX509
+[01/03/19 15:57:47:434 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting default TrustManager: PKIX
+[01/03/19 15:57:47:434 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Saving SSLConfig: SSLConfig.toString() {
+com.ibm.ssl.keyStorePassword=*************
+com.ibm.ssl.trustStoreFileBased=true
+com.ibm.ssl.keyStoreName=defaultKeyStore
+config.displayId=keyStore[defaultKeyStore]
+com.ibm.ssl.trustStoreReadOnly=false
+com.ibm.ssl.contextProvider=IBMJSSE2
+com.ibm.ssl.keyStoreFileBased=true
+com.ibm.ssl.alias=defaultSSLConfig
+com.ibm.ssl.keyManager=IbmX509
+com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+com.ibm.ssl.trustStoreInitializeAtStartup=false
+com.ibm.ssl.keyStoreType=JKS
+com.ibm.ssl.clientAuthentication=false
+com.ibm.ssl.keyStoreInitializeAtStartup=false
+config.source=file
+id=defaultKeyStore
+service.factoryPid=com.ibm.ws.ssl.keystore
+config.id=com.ibm.ws.ssl.keystore[defaultKeyStore]
+com.ibm.ssl.trustStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+service.pid=com.ibm.ws.ssl.keystore_29
+com.ibm.ssl.tokenEnabled=false
+com.ibm.ssl.trustManager=PKIX
+com.ibm.ssl.protocol=SSL_TLSv2
+com.ibm.ssl.trustStorePassword=*************
+com.ibm.ssl.trustStoreName=defaultKeyStore
+com.ibm.ssl.keyStoreCreateCMSStash=false
+config.overrides=true
+com.ibm.ssl.trustStoreCreateCMSStash=false
+com.ibm.ssl.keyStoreReadOnly=false
+com.ibm.ssl.securityLevel=HIGH
+com.ibm.ssl.trustStoreType=JKS
+com.ibm.ssl.validationEnabled=false
+com.ibm.ssl.clientAuthenticationSupported=false
+}
+[01/03/19 15:57:47:435 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < parseSecureSocketLayer Exit 
+[01/03/19 15:57:47:435 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < parseSSLConfig Exit 
+[01/03/19 15:57:47:440 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 requiredPropertiesArePresent -> true
+[01/03/19 15:57:47:440 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              > decodePasswords Entry 
+[01/03/19 15:57:47:441 GMT] 00000022 id=00000000 com.ibm.websphere.ssl.SSLConfig                              < decodePasswords Exit 
+[01/03/19 15:57:47:441 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > addSSLConfigToMap: alias=defaultSSLConfig Entry 
+[01/03/19 15:57:47:442 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 SSLConfig.toString() {
+com.ibm.ssl.keyStorePassword=******
+com.ibm.ssl.trustStoreFileBased=true
+com.ibm.ssl.keyStoreName=defaultKeyStore
+config.displayId=keyStore[defaultKeyStore]
+com.ibm.ssl.trustStoreReadOnly=false
+com.ibm.ssl.contextProvider=IBMJSSE2
+com.ibm.ssl.keyStoreFileBased=true
+com.ibm.ssl.alias=defaultSSLConfig
+com.ibm.ssl.keyManager=IbmX509
+com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+com.ibm.ssl.trustStoreInitializeAtStartup=false
+com.ibm.ssl.keyStoreType=JKS
+com.ibm.ssl.clientAuthentication=false
+com.ibm.ssl.keyStoreInitializeAtStartup=false
+config.source=file
+id=defaultKeyStore
+service.factoryPid=com.ibm.ws.ssl.keystore
+config.id=com.ibm.ws.ssl.keystore[defaultKeyStore]
+com.ibm.ssl.trustStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+service.pid=com.ibm.ws.ssl.keystore_29
+com.ibm.ssl.tokenEnabled=false
+com.ibm.ssl.trustManager=PKIX
+com.ibm.ssl.protocol=SSL_TLSv2
+com.ibm.ssl.trustStorePassword=******
+com.ibm.ssl.trustStoreName=defaultKeyStore
+com.ibm.ssl.keyStoreCreateCMSStash=false
+config.overrides=true
+com.ibm.ssl.trustStoreCreateCMSStash=false
+com.ibm.ssl.keyStoreReadOnly=false
+com.ibm.ssl.securityLevel=HIGH
+com.ibm.ssl.trustStoreType=JKS
+com.ibm.ssl.validationEnabled=false
+com.ibm.ssl.clientAuthenticationSupported=false
+}
+[01/03/19 15:57:47:442 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < addSSLConfigToMap Exit 
+[01/03/19 15:57:47:442 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.OutboundSSLSelections                  > loadOutboundConnectionInfo Entry 
+[01/03/19 15:57:47:443 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.OutboundSSLSelections                  < loadOutboundConnectionInfo Exit 
+[01/03/19 15:57:47:443 GMT] 00000022 id=da11e775 com.ibm.ws.ssl.internal.GenericSSLConfigService              1 activate defaultSSLConfig 
+                                                                                                               {component.name=com.ibm.ws.ssl.internal.RepertoireConfigService, id=defaultSSLConfig, config.source=file, clientAuthentication=false, clientAuthenticationSupported=false, service.vendor=IBM, service.factoryPid=com.ibm.ws.ssl.repertoire, TrustStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), KeyStore.target=(service.pid=com.ibm.ws.ssl.keystore_29), service.pid=com.ibm.ws.ssl.repertoire_45, config.overrides=true, component.id=233, config.displayId=ssl[defaultSSLConfig], securityLevel=HIGH, config.id=com.ibm.ws.ssl.repertoire[defaultSSLConfig], effectiveTrustStore=com.ibm.ws.ssl.keystore_29, keyStoreRef=com.ibm.ws.ssl.keystore_29}
+[01/03/19 15:57:47:447 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         1 Adding repertoire: defaultSSLConfig
+[01/03/19 15:57:47:448 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         1 Processing configuration true
+[01/03/19 15:57:47:448 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > initializeSSL Entry 
+[01/03/19 15:57:47:448 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > loadGlobalProperties Entry 
+[01/03/19 15:57:47:448 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: service.vendor=IBM
+[01/03/19 15:57:47:449 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: sslRef=defaultSSLConfig
+[01/03/19 15:57:47:449 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: config.displayId=sslDefault
+[01/03/19 15:57:47:449 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: component.name=com.ibm.ws.ssl.internal.SSLComponent
+[01/03/19 15:57:47:449 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: config.source=file
+[01/03/19 15:57:47:449 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: com.ibm.ssl.defaultAlias=defaultSSLConfig
+[01/03/19 15:57:47:452 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: config.overrides=true
+[01/03/19 15:57:47:452 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: KeyStore.target=(id=*)
+[01/03/19 15:57:47:452 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: Repertoire.target=(id=*)
+[01/03/19 15:57:47:453 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: httpHostNameVerification=false
+[01/03/19 15:57:47:453 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: service.pid=com.ibm.ws.ssl.default
+[01/03/19 15:57:47:453 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Setting global property: com.ibm.ssl.performURLHostNameVerification=false
+[01/03/19 15:57:47:453 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < loadGlobalProperties Exit 
+[01/03/19 15:57:47:453 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > isTransportSecurityEnabled Entry 
+[01/03/19 15:57:47:454 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < isTransportSecurityEnabled false Exit 
+[01/03/19 15:57:47:454 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > setDefaultSSLContext Entry 
+[01/03/19 15:57:47:454 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > getDefaultSSLConfig Entry 
+[01/03/19 15:57:47:454 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 getGlobalProperty -> com.ibm.ssl.defaultAlias=defaultSSLConfig
+[01/03/19 15:57:47:454 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 defaultAlias: defaultSSLConfig
+[01/03/19 15:57:47:460 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < defaultAlias not null, getDefaultSSLConfig for: defaultSSLConfig Exit 
+[01/03/19 15:57:47:460 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:47:460 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:47:466 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 > setServerDefaultSSLContext Entry 
+[01/03/19 15:57:47:467 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 > getSSLContext Entry  
+                                                                                                               null
+[01/03/19 15:57:47:483 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.ThreadContext                          3 setOutboundConnectionInfoInternal :null
+[01/03/19 15:57:47:483 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 outboundConnectionInfo: null
+[01/03/19 15:57:47:483 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 > getSSLContextInstance Entry 
+[01/03/19 15:57:47:485 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 < getSSLContextInstance Exit 
+[01/03/19 15:57:47:485 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 > getKeyTrustManagers Entry  
+                                                                                                               null
+                                                                                                               SSLConfig.toString() {
+com.ibm.ssl.keyStorePassword=******
+com.ibm.ssl.trustStoreFileBased=true
+com.ibm.ssl.keyStoreName=defaultKeyStore
+config.displayId=keyStore[defaultKeyStore]
+com.ibm.ssl.trustStoreReadOnly=false
+com.ibm.ssl.contextProvider=IBMJSSE2
+com.ibm.ssl.keyStoreFileBased=true
+com.ibm.ssl.alias=defaultSSLConfig
+com.ibm.ssl.keyManager=IbmX509
+com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+com.ibm.ssl.trustStoreInitializeAtStartup=false
+com.ibm.ssl.keyStoreType=JKS
+com.ibm.ssl.clientAuthentication=false
+com.ibm.ssl.keyStoreInitializeAtStartup=false
+config.source=file
+id=defaultKeyStore
+service.factoryPid=com.ibm.ws.ssl.keystore
+config.id=com.ibm.ws.ssl.keystore[defaultKeyStore]
+com.ibm.ssl.trustStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+service.pid=com.ibm.ws.ssl.keystore_29
+com.ibm.ssl.tokenEnabled=false
+com.ibm.ssl.trustManager=PKIX
+com.ibm.ssl.protocol=SSL_TLSv2
+com.ibm.ssl.trustStorePassword=******
+com.ibm.ssl.trustStoreName=defaultKeyStore
+com.ibm.ssl.keyStoreCreateCMSStash=false
+config.overrides=true
+com.ibm.ssl.trustStoreCreateCMSStash=false
+com.ibm.ssl.keyStoreReadOnly=false
+com.ibm.ssl.securityLevel=HIGH
+com.ibm.ssl.trustStoreType=JKS
+com.ibm.ssl.validationEnabled=false
+com.ibm.ssl.clientAuthenticationSupported=false
+}
+[01/03/19 15:57:47:485 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        3 Returning a keyStore for name: defaultKeyStore
+[01/03/19 15:57:47:485 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        3 Returning a keyStore for name: defaultKeyStore
+[01/03/19 15:57:47:487 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:489 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Using trust store: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:491 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 getTrustManagerFactory.getInstance(PKIX, IBMJSSE2)javax.net.ssl.TrustManagerFactory@f246fe8c
+[01/03/19 15:57:47:491 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 certStoreHost: null
+[01/03/19 15:57:47:492 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 certStorePort: 389
+[01/03/19 15:57:47:492 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 trustManagerAlgorithm: PKIX
+[01/03/19 15:57:47:493 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:494 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Using software keystore: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:495 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 getKeyManagerFactory.getInstance(IbmX509, IBMJSSE2) javax.net.ssl.KeyManagerFactory@8cea414
+[01/03/19 15:57:47:496 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Entering synchronized block around key manager factory init.
+[01/03/19 15:57:47:501 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Exiting synchronized block around key manager factory init.
+[01/03/19 15:57:47:510 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > WSX509KeyManager Entry 
+[01/03/19 15:57:47:519 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    > <init> Entry 
+[01/03/19 15:57:47:519 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    > parseSSLCertFile Entry 
+[01/03/19 15:57:47:519 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    < parseSSLCertFile Exit 
+[01/03/19 15:57:47:519 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    < <init> Exit 
+[01/03/19 15:57:47:519 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        3 Returning a keyStore for name: defaultKeyStore
+[01/03/19 15:57:47:519 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < WSX509KeyManager Exit 
+[01/03/19 15:57:47:520 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Initializing WSX509KeyManager. 
+                                                                                                               null
+                                                                                                               null
+                                                                                                               null
+[01/03/19 15:57:47:532 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:532 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.WSX509TrustManager                       > WSX509TrustManager Entry  
+                                                                                                               null
+                                                                                                               /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:535 GMT] 00000022 id=00000000 com.ibm.ws.ssl.core.WSX509TrustManager                       < WSX509TrustManager Exit 
+[01/03/19 15:57:47:535 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 < getKeyTrustManagers Exit 
+[01/03/19 15:57:47:541 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 SSLContext cache size: 1
+[01/03/19 15:57:47:542 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 < getSSLContext -> (new) Exit 
+[01/03/19 15:57:47:542 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Default SSLContext set to defaultSSLConfig
+[01/03/19 15:57:47:543 GMT] 00000022 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 < setServerDefaultSSLContext Exit 
+[01/03/19 15:57:47:543 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < setDefaultSSLContext Exit 
+[01/03/19 15:57:47:543 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 getGlobalProperty -> com.ibm.ssl.performURLHostNameVerification=false
+[01/03/19 15:57:47:543 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 com.ibm.ssl.performURLHostNameVerification disabled
+[01/03/19 15:57:47:543 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       3 Total Number of SSLConfigs: 1
+[01/03/19 15:57:47:544 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < initializeSSL Exit 
+[01/03/19 15:57:47:545 GMT] 00000022 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent MODIFIED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.ws.ssl.optional.SSLSupportOptional](id=321, pid=com.ibm.ws.ssl.default)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.ws.ssl.optional.SSLSupportOptional}={keystoreIds=[defaultKeyStore], sslRef=defaultSSLConfig, service.id=321, service.bundleid=105, service.scope=bundle, config.overrides=true, repertoireIds=[defaultSSLConfig], component.name=com.ibm.ws.ssl.internal.SSLComponent, component.id=234, httpHostNameVerification=false, KeyStore.target=(id=*), SSLSupport=active, config.source=file, repertoirePIDs=[com.ibm.ws.ssl.repertoire_45], Repertoire.target=(id=*), service.vendor=IBM, service.pid=com.ibm.ws.ssl.default, config.displayId=sslDefault}]
+[01/03/19 15:57:47:554 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLSupportImpl                       1 <init>
+[01/03/19 15:57:47:556 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLSupportImpl                       1 setSSLSupportOptional: delegate: com.ibm.ws.ssl.internal.SSLComponent@6751656b props: {component.id=234, repertoirePIDs=[Ljava.lang.String;@635e5005, config.displayId=sslDefault, SSLSupport=active, component.name=com.ibm.ws.ssl.internal.SSLComponent, objectClass=[Ljava.lang.String;@2f2412ff, service.id=321, Repertoire.target=(id=*), config.source=file, service.pid=com.ibm.ws.ssl.default, repertoireIds=[Ljava.lang.String;@bf5bdbbf, service.vendor=IBM, config.overrides=true, sslRef=defaultSSLConfig, service.scope=bundle, KeyStore.target=(id=*), httpHostNameVerification=false, keystoreIds=[Ljava.lang.String;@70bd7c8e, service.bundleid=105}
+[01/03/19 15:57:47:557 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLSupportImpl                       1 Activated: org.eclipse.osgi.internal.framework.BundleContextImpl@47e004c8
+[01/03/19 15:57:47:558 GMT] 00000022 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent REGISTERED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.wsspi.ssl.SSLSupport](id=341, pid=com.ibm.ws.ssl.default)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.wsspi.ssl.SSLSupport}={keystoreIds=[defaultKeyStore], sslRef=defaultSSLConfig, service.id=341, service.bundleid=105, service.scope=singleton, config.overrides=true, repertoireIds=[defaultSSLConfig], component.name=com.ibm.ws.ssl.internal.SSLComponent, component.id=234, httpHostNameVerification=false, KeyStore.target=(id=*), SSLSupport=active, config.source=file, Repertoire.target=(id=*), repertoirePIDs=[com.ibm.ws.ssl.repertoire_45], service.vendor=IBM, service.pid=com.ibm.ws.ssl.default, config.displayId=sslDefault}]
+[01/03/19 15:57:47:566 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLSupportImpl                       1 Activated: return registerService: {com.ibm.wsspi.ssl.SSLSupport}={keystoreIds=[defaultKeyStore], sslRef=defaultSSLConfig, service.id=341, service.bundleid=105, service.scope=singleton, config.overrides=true, repertoireIds=[defaultSSLConfig], component.name=com.ibm.ws.ssl.internal.SSLComponent, component.id=234, httpHostNameVerification=false, KeyStore.target=(id=*), SSLSupport=active, config.source=file, Repertoire.target=(id=*), repertoirePIDs=[com.ibm.ws.ssl.repertoire_45], service.vendor=IBM, service.pid=com.ibm.ws.ssl.default, config.displayId=sslDefault}
+[01/03/19 15:57:47:567 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         1 Adding keystore: defaultKeyStore
+[01/03/19 15:57:47:567 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLComponent                         1 Processing configuration false
+[01/03/19 15:57:47:569 GMT] 00000022 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent MODIFIED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.ws.ssl.optional.SSLSupportOptional](id=321, pid=com.ibm.ws.ssl.default)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.ws.ssl.optional.SSLSupportOptional}={keystoreIds=[defaultKeyStore], sslRef=defaultSSLConfig, service.id=321, service.bundleid=105, service.scope=bundle, config.overrides=true, repertoireIds=[defaultSSLConfig], component.name=com.ibm.ws.ssl.internal.SSLComponent, component.id=234, httpHostNameVerification=false, KeyStore.target=(id=*), SSLSupport=active, config.source=file, repertoirePIDs=[com.ibm.ws.ssl.repertoire_45], Repertoire.target=(id=*), service.vendor=IBM, service.pid=com.ibm.ws.ssl.default, config.displayId=sslDefault}]
+[01/03/19 15:57:47:569 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.SSLSupportImpl                       1 updatedSSLSupportOptional: delegate: com.ibm.ws.ssl.internal.SSLComponent@6751656b props: {component.id=234, repertoirePIDs=[Ljava.lang.String;@b4af5560, config.displayId=sslDefault, SSLSupport=active, component.name=com.ibm.ws.ssl.internal.SSLComponent, objectClass=[Ljava.lang.String;@bf4b8221, service.id=321, Repertoire.target=(id=*), config.source=file, service.pid=com.ibm.ws.ssl.default, repertoireIds=[Ljava.lang.String;@ce2fa824, service.vendor=IBM, config.overrides=true, sslRef=defaultSSLConfig, service.scope=bundle, KeyStore.target=(id=*), httpHostNameVerification=false, keystoreIds=[Ljava.lang.String;@7c414f7c, service.bundleid=105}
+[01/03/19 15:57:47:570 GMT] 00000022 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent MODIFIED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.wsspi.ssl.SSLSupport](id=341, pid=com.ibm.ws.ssl.default)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.wsspi.ssl.SSLSupport}={keystoreIds=[defaultKeyStore], sslRef=defaultSSLConfig, service.id=341, service.bundleid=105, service.scope=singleton, config.overrides=true, repertoireIds=[defaultSSLConfig], component.name=com.ibm.ws.ssl.internal.SSLComponent, component.id=234, httpHostNameVerification=false, KeyStore.target=(id=*), SSLSupport=active, config.source=file, Repertoire.target=(id=*), repertoirePIDs=[com.ibm.ws.ssl.repertoire_45], service.vendor=IBM, service.pid=com.ibm.ws.ssl.default, config.displayId=sslDefault}]
+[01/03/19 15:57:47:582 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getTrigger returning mbean
+[01/03/19 15:57:47:582 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:47:582 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getPollingRate returning 500
+[01/03/19 15:57:47:583 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.KeystoreConfigurationFactory         > createFileMonitor Entry  
+                                                                                                               /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+                                                                                                               mbean
+                                                                                                               500
+[01/03/19 15:57:47:585 GMT] 00000022 id=f05f7b43 LogService-105-com.ibm.ws.ssl                                1 ServiceEvent REGISTERED 
+                                                                                                               LoggerName:Events.Service
+                                                                                                               ServiceRef:[com.ibm.wsspi.kernel.filemonitor.FileMonitor](id=346, pid=null)
+                                                                                                               Event:org.osgi.framework.ServiceEvent[source={com.ibm.wsspi.kernel.filemonitor.FileMonitor}={service.id=346, service.bundleid=105, service.scope=singleton, monitor.files=[/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks], monitor.type=external}]
+[01/03/19 15:57:47:586 GMT] 00000022 id=f8afd744 com.ibm.ws.ssl.internal.KeystoreConfigurationFactory         1 setFileMonitorRegistration
+[01/03/19 15:57:47:587 GMT] 00000022 id=00000000 com.ibm.ws.ssl.internal.KeystoreConfigurationFactory         < createFileMonitor Exit 
+[01/03/19 15:57:47:595 GMT] 00000034 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:47:595 GMT] 00000034 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:47:623 GMT] 00000034 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             3 Creating new instance of JSSEHelper.
+[01/03/19 15:57:47:628 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:47:628 GMT] 00000022 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:47:630 GMT] 00000022 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel InboundJmsCommsEndpoint-ssl has been started and is now listening for requests on host *  (IPv6) port 17510.
+[01/03/19 15:57:47:640 GMT] 00000034 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host *  (IPv6) port 8040.
+[01/03/19 15:57:47:654 GMT] 00000032 id=00000000 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been activated. 
+[01/03/19 15:57:48:255 GMT] 0000002a id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: The server configuration was successfully updated in 3.938 seconds.
+[01/03/19 15:57:48:304 GMT] 00000032 id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [ssl-1.0, wasJmsServer-1.0, wasJmsSecurity-1.0].
+[01/03/19 15:57:48:306 GMT] 00000032 id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0008I: Feature update completed in 3.942 seconds.
+[01/03/19 15:57:48:397 GMT] 00000028 id=00000000 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0008I: The security service is ready.
+[01/03/19 15:57:48:405 GMT] 00000028 id=00000000 com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: LTPA configuration is ready after 1.065 seconds.
+[01/03/19 15:57:49:681 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             > getProperties Entry  
+                                                                                                               defaultSSLConfig
+                                                                                                               {com.ibm.ssl.remoteHost=*, com.ibm.ssl.direction=inbound, com.ibm.ssl.remotePort=17510, com.ibm.ssl.endPointName=InboundJmsCommsEndpoint-ssl}
+                                                                                                               null
+[01/03/19 15:57:49:681 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > isTransportSecurityEnabled Entry 
+[01/03/19 15:57:49:681 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < isTransportSecurityEnabled false Exit 
+[01/03/19 15:57:49:681 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             > getSSLPropertiesOnThread Entry 
+[01/03/19 15:57:49:681 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.ThreadContext                          3 getProperties
+[01/03/19 15:57:49:682 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             < getSSLPropertiesOnThread Exit  
+                                                                                                               Thread properties are NULL.
+[01/03/19 15:57:49:682 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > getSSLConfig: defaultSSLConfig Entry 
+[01/03/19 15:57:49:682 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < getSSLConfig Exit  
+                                                                                                               SSLConfig.toString() {
+com.ibm.ssl.keyStorePassword=******
+com.ibm.ssl.trustStoreFileBased=true
+com.ibm.ssl.keyStoreName=defaultKeyStore
+config.displayId=keyStore[defaultKeyStore]
+com.ibm.ssl.trustStoreReadOnly=false
+com.ibm.ssl.contextProvider=IBMJSSE2
+com.ibm.ssl.keyStoreFileBased=true
+com.ibm.ssl.alias=defaultSSLConfig
+com.ibm.ssl.keyManager=IbmX509
+com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+com.ibm.ssl.trustStoreInitializeAtStartup=false
+com.ibm.ssl.keyStoreType=JKS
+com.ibm.ssl.clientAuthentication=false
+com.ibm.ssl.keyStoreInitializeAtStartup=false
+config.source=file
+id=defaultKeyStore
+service.factoryPid=com.ibm.ws.ssl.keystore
+config.id=com.ibm.ws.ssl.keystore[defaultKeyStore]
+com.ibm.ssl.trustStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+service.pid=com.ibm.ws.ssl.keystore_29
+com.ibm.ssl.tokenEnabled=false
+com.ibm.ssl.trustManager=PKIX
+com.ibm.ssl.protocol=SSL_TLSv2
+com.ibm.ssl.trustStorePassword=******
+com.ibm.ssl.trustStoreName=defaultKeyStore
+com.ibm.ssl.keyStoreCreateCMSStash=false
+config.overrides=true
+com.ibm.ssl.trustStoreCreateCMSStash=false
+com.ibm.ssl.keyStoreReadOnly=false
+com.ibm.ssl.securityLevel=HIGH
+com.ibm.ssl.trustStoreType=JKS
+com.ibm.ssl.validationEnabled=false
+com.ibm.ssl.clientAuthenticationSupported=false
+}
+[01/03/19 15:57:49:682 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       > determineIfCSIv2SettingsApply Entry  
+                                                                                                               {com.ibm.ssl.remoteHost=*, com.ibm.ssl.direction=inbound, com.ibm.ssl.remotePort=17510, com.ibm.ssl.endPointName=InboundJmsCommsEndpoint-ssl}
+[01/03/19 15:57:49:682 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.SSLConfigManager                       < determineIfCSIv2SettingsApply (original settings) Exit 
+[01/03/19 15:57:49:682 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             < getProperties -> direct Exit 
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStoreType: JKS
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStoreType: JKS
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           > getInstance: null Entry 
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.ws.ssl.JSSEProviderFactory                           < getInstance: com.ibm.ws.ssl.provider.IBMJSSEProvider@3ee88e77 Exit 
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStore: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStoreName: defaultKeyStore
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 keyStorePassword: ******
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStore: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStoreName: defaultKeyStore
+[01/03/19 15:57:49:683 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.SSLConfig                              3 trustStorePassword: ******
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 > getSSLContext Entry  
+                                                                                                               {com.ibm.ssl.remoteHost=*, com.ibm.ssl.direction=inbound, com.ibm.ssl.remotePort=17510, com.ibm.ssl.endPointName=InboundJmsCommsEndpoint-ssl}
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.ThreadContext                          3 setOutboundConnectionInfoInternal :null
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 outboundConnectionInfo: null
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 > getSSLContextInstance Entry 
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 < getSSLContextInstance Exit 
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 > getKeyTrustManagers Entry  
+                                                                                                               {com.ibm.ssl.remoteHost=*, com.ibm.ssl.direction=inbound, com.ibm.ssl.remotePort=17510, com.ibm.ssl.endPointName=InboundJmsCommsEndpoint-ssl}
+                                                                                                               SSLConfig.toString() {
+com.ibm.ssl.keyStorePassword=******
+com.ibm.ssl.trustStoreFileBased=true
+com.ibm.ssl.keyStoreName=defaultKeyStore
+config.displayId=keyStore[defaultKeyStore]
+com.ibm.ssl.trustStoreReadOnly=false
+com.ibm.ssl.contextProvider=IBMJSSE2
+com.ibm.ssl.keyStoreFileBased=true
+com.ibm.ssl.alias=defaultSSLConfig
+com.ibm.ssl.keyManager=IbmX509
+com.ibm.ssl.keyStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+com.ibm.ssl.trustStoreInitializeAtStartup=false
+com.ibm.ssl.keyStoreType=JKS
+com.ibm.ssl.clientAuthentication=false
+com.ibm.ssl.keyStoreInitializeAtStartup=false
+config.source=file
+alias=defaultSSLConfig
+com.ibm.ssl.trustStore=/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+config.id=com.ibm.ws.ssl.keystore[defaultKeyStore]
+service.factoryPid=com.ibm.ws.ssl.keystore
+id=defaultKeyStore
+service.pid=com.ibm.ws.ssl.keystore_29
+com.ibm.ssl.trustStorePassword=******
+com.ibm.ssl.protocol=SSL_TLSv2
+com.ibm.ssl.trustManager=PKIX
+com.ibm.ssl.tokenEnabled=false
+com.ibm.ssl.trustStoreName=defaultKeyStore
+com.ibm.ssl.keyStoreCreateCMSStash=false
+com.ibm.ssl.trustStoreCreateCMSStash=false
+config.overrides=true
+sslRef=defaultSSLConfig
+com.ibm.ssl.keyStoreReadOnly=false
+com.ibm.ssl.securityLevel=HIGH
+com.ibm.ssl.trustStoreType=JKS
+com.ibm.ssl.validationEnabled=false
+com.ibm.ssl.clientAuthenticationSupported=false
+}
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        3 Returning a keyStore for name: defaultKeyStore
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        3 Returning a keyStore for name: defaultKeyStore
+[01/03/19 15:57:49:684 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:685 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Using trust store: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:685 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 getTrustManagerFactory.getInstance(PKIX, IBMJSSE2)javax.net.ssl.TrustManagerFactory@ddb129a
+[01/03/19 15:57:49:685 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 certStoreHost: null
+[01/03/19 15:57:49:685 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 certStorePort: 389
+[01/03/19 15:57:49:685 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 trustManagerAlgorithm: PKIX
+[01/03/19 15:57:49:685 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:686 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Using software keystore: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:686 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 getKeyManagerFactory.getInstance(IbmX509, IBMJSSE2) javax.net.ssl.KeyManagerFactory@aaeb2704
+[01/03/19 15:57:49:687 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Entering synchronized block around key manager factory init.
+[01/03/19 15:57:49:688 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Exiting synchronized block around key manager factory init.
+[01/03/19 15:57:49:688 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > WSX509KeyManager Entry 
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    > <init> Entry 
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    > parseSSLCertFile Entry 
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    < parseSSLCertFile Exit 
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.CertMappingKeyManager                    < <init> Exit 
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.KeyStoreManager                        3 Returning a keyStore for name: defaultKeyStore
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < WSX509KeyManager Exit 
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 Initializing WSX509KeyManager. 
+                                                                                                               null
+                                                                                                               null
+                                                                                                               null
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             3 getLocation -> /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:689 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509TrustManager                       > WSX509TrustManager Entry  
+                                                                                                               {com.ibm.ssl.remoteHost=*, com.ibm.ssl.direction=inbound, com.ibm.ssl.remotePort=17510, com.ibm.ssl.endPointName=InboundJmsCommsEndpoint-ssl}
+                                                                                                               /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/resources/security/mykeynew.jks
+[01/03/19 15:57:49:690 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509TrustManager                       < WSX509TrustManager Exit 
+[01/03/19 15:57:49:690 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 < getKeyTrustManagers Exit 
+[01/03/19 15:57:49:691 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 3 SSLContext cache size: 2
+[01/03/19 15:57:49:691 GMT] 00000028 id=00000000 com.ibm.ws.ssl.provider.AbstractJSSEProvider                 < getSSLContext -> (new) Exit 
+[01/03/19 15:57:49:742 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.Constants                              > adjustSupportedCiphersToSecurityLevel Entry  
+                                                                                                               (46) TLS_EMPTY_RENEGOTIATION_INFO_SCSV SSL_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256 SSL_RSA_WITH_AES_128_CBC_SHA256 SSL_ECDH_ECDSA_WITH_AES_128_CBC_SHA256 SSL_ECDH_RSA_WITH_AES_128_CBC_SHA256 SSL_DHE_RSA_WITH_AES_128_CBC_SHA256 SSL_DHE_DSS_WITH_AES_128_CBC_SHA256 SSL_ECDHE_ECDSA_WITH_AES_128_CBC_SHA SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA SSL_RSA_WITH_AES_128_CBC_SHA SSL_ECDH_ECDSA_WITH_AES_128_CBC_SHA SSL_ECDH_RSA_WITH_AES_128_CBC_SHA SSL_DHE_RSA_WITH_AES_128_CBC_SHA SSL_DHE_DSS_WITH_AES_128_CBC_SHA SSL_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256 SSL_RSA_WITH_AES_128_GCM_SHA256 SSL_ECDH_ECDSA_WITH_AES_128_GCM_SHA256 SSL_ECDH_RSA_WITH_AES_128_GCM_SHA256 SSL_DHE_RSA_WITH_AES_128_GCM_SHA256 SSL_DHE_DSS_WITH_AES_128_GCM_SHA256 SSL_DH_anon_WITH_AES_128_CBC_SHA256 SSL_ECDH_anon_WITH_AES_128_CBC_SHA SSL_DH_anon_WITH_AES_128_CBC_SHA SSL_RSA_WITH_DES_CBC_SHA SSL_DHE_RSA_WITH_DES_CBC_SHA SSL_DHE_DSS_WITH_DES_CBC_SHA SSL_DH_anon_WITH_DES_CBC_SHA SSL_RSA_FIPS_WITH_DES_CBC_SHA SSL_RSA_EXPORT_WITH_DES40_CBC_SHA SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA SSL_RSA_WITH_NULL_SHA256 SSL_ECDHE_ECDSA_WITH_NULL_SHA SSL_ECDHE_RSA_WITH_NULL_SHA SSL_RSA_WITH_NULL_SHA SSL_ECDH_ECDSA_WITH_NULL_SHA SSL_ECDH_RSA_WITH_NULL_SHA SSL_ECDH_anon_WITH_NULL_SHA SSL_RSA_WITH_NULL_MD5 SSL_KRB5_WITH_DES_CBC_SHA SSL_KRB5_WITH_DES_CBC_MD5 SSL_KRB5_EXPORT_WITH_DES_CBC_40_SHA SSL_KRB5_EXPORT_WITH_DES_CBC_40_MD5
+                                                                                                               HIGH
+[01/03/19 15:57:49:743 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.Constants                              < adjustSupportedCiphersToSecurityLevel -> (21) SSL_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256 SSL_RSA_WITH_AES_128_CBC_SHA256 SSL_ECDH_ECDSA_WITH_AES_128_CBC_SHA256 SSL_ECDH_RSA_WITH_AES_128_CBC_SHA256 SSL_DHE_RSA_WITH_AES_128_CBC_SHA256 SSL_DHE_DSS_WITH_AES_128_CBC_SHA256 SSL_ECDHE_ECDSA_WITH_AES_128_CBC_SHA SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA SSL_RSA_WITH_AES_128_CBC_SHA SSL_ECDH_ECDSA_WITH_AES_128_CBC_SHA SSL_ECDH_RSA_WITH_AES_128_CBC_SHA SSL_DHE_RSA_WITH_AES_128_CBC_SHA SSL_DHE_DSS_WITH_AES_128_CBC_SHA SSL_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256 SSL_RSA_WITH_AES_128_GCM_SHA256 SSL_ECDH_ECDSA_WITH_AES_128_GCM_SHA256 SSL_ECDH_RSA_WITH_AES_128_GCM_SHA256 SSL_DHE_RSA_WITH_AES_128_GCM_SHA256 SSL_DHE_DSS_WITH_AES_128_GCM_SHA256 Exit 
+[01/03/19 15:57:49:826 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > chooseEngineServerAlias Entry  
+                                                                                                               EC
+                                                                                                               null
+                                                                                                               4e2a15[SSLEngine[hostname=null port=-1] SSL_NULL_WITH_NULL_NULL]
+[01/03/19 15:57:49:827 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > chooseServerAlias Entry  
+                                                                                                               EC
+                                                                                                               null
+[01/03/19 15:57:49:827 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             > getInboundConnectionInfo Entry 
+[01/03/19 15:57:49:830 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.ThreadContext                          3 getInboundConnectionInfo
+[01/03/19 15:57:49:832 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             < getInboundConnectionInfo Exit  
+                                                                                                               null
+[01/03/19 15:57:49:832 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < chooseServerAlias (from JSSE) Exit  
+                                                                                                               null
+[01/03/19 15:57:49:832 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < chooseEngineServerAlias: null Exit 
+[01/03/19 15:57:49:833 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > chooseEngineServerAlias Entry  
+                                                                                                               RSA
+                                                                                                               null
+                                                                                                               4e2a15[SSLEngine[hostname=null port=-1] SSL_NULL_WITH_NULL_NULL]
+[01/03/19 15:57:49:833 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > chooseServerAlias Entry  
+                                                                                                               RSA
+                                                                                                               null
+[01/03/19 15:57:49:833 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             > getInboundConnectionInfo Entry 
+[01/03/19 15:57:49:833 GMT] 00000028 id=00000000 com.ibm.ws.ssl.config.ThreadContext                          3 getInboundConnectionInfo
+[01/03/19 15:57:49:833 GMT] 00000028 id=00000000 com.ibm.websphere.ssl.JSSEHelper                             < getInboundConnectionInfo Exit  
+                                                                                                               null
+[01/03/19 15:57:49:834 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < chooseServerAlias (from JSSE) Exit  
+                                                                                                               default
+[01/03/19 15:57:49:834 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < chooseEngineServerAlias: default Exit 
+[01/03/19 15:57:49:837 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > getPrivateKey Entry  
+                                                                                                               default
+[01/03/19 15:57:49:838 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         3 getX509KeyManager -> com.ibm.jsse2.ax
+[01/03/19 15:57:49:838 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < getPrivateKey -> true Exit 
+[01/03/19 15:57:49:838 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         > getCertificateChain: default Entry 
+[01/03/19 15:57:49:838 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         3 getX509KeyManager -> com.ibm.jsse2.ax
+[01/03/19 15:57:49:838 GMT] 00000028 id=00000000 com.ibm.ws.ssl.core.WSX509KeyManager                         < getCertificateChain Exit  
+                                                                                                               [
+[
+  Version: V3
+  Subject: CN=localhost, O=ibm, C=US
+  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
+
+  Key:  IBMJCE RSA Public Key:
+modulus:
+16470453154196018840676491921956974869736546753222645843987390386471840637854228751151491476389442539413691768575296146469679748241612231245299203420259016289592122816270973762122014288542864089816016524443785627244837046269428097058578315895291059728590244298555363834198406332073878644362892291760989527656581536421926419669545918725483140087974372351755731729119826986794592288722008227205968092143372551380760706901589789780105659593501861856698401824895820613880328071847300692325169852018785710427192310928565191809870222750889317179387108982862035133268599649658175202812831781965852752253317624383785659384953
+public exponent:
+65537
+
+  Validity: [From: Fri Jun 06 05:38:20 BST 2014,
+               To: Mon Jun 03 05:38:20 BST 2024]
+  Issuer: CN=localhost, O=ibm, C=US
+  SerialNumber: [1402029500]
+
+]
+  Algorithm: [SHA1withRSA]
+  Signature:
+0000: 09 1c 25 6d 05 cc 53 4c  bb 6a f6 54 79 c1 71 46  ...m..SL.j.Ty.qF
+0010: 1c a4 db 22 e8 68 dd 78  65 12 9e 8e e7 07 f2 80  .....h.xe.......
+0020: 1f 93 85 28 87 f9 49 2e  94 e7 dc 7b 8b d0 b7 f8  ......I.........
+0030: 49 76 89 8b 61 6b fb ce  18 a1 21 99 20 dc 5f d4  Iv..ak..........
+0040: bd 06 ba 63 ac a4 fc ec  01 98 b2 43 57 41 8d 72  ...c.......CWA.r
+0050: 68 9b 1b 29 f2 89 d7 db  5c d0 0a d1 a8 0f 5b 99  h...............
+0060: 94 c1 2a 2d c7 3b 54 e7  d0 7a d8 58 e8 f9 97 fb  ......T..z.X....
+0070: 9f 91 8c c8 5c c4 85 2f  b5 07 97 4a 24 4e 38 3c  ...........J.N8.
+0080: 97 96 f6 02 84 70 4d 51  0b 36 b4 9a 33 79 9f 63  .....pMQ.6..3y.c
+0090: 10 cc f1 73 ff 6a d7 c7  79 ee a1 89 41 32 0a 8b  ...s.j..y...A2..
+00a0: af 8e 78 a4 d0 06 be e8  62 26 9f 06 c1 18 8a 7d  ..x.....b.......
+00b0: 88 e9 70 6e d1 00 36 12  83 c6 de 11 1f 40 a8 62  ..pn..6........b
+00c0: 67 73 df 3b bf 9b bc 84  4b 6a e1 84 b5 8c 72 1e  gs......Kj....r.
+00d0: 07 01 05 14 3e ea 20 8a  ac f0 94 7f ff e3 cb a2  ................
+00e0: 3e 36 a5 dc e0 83 5e 54  ae ce 69 9f 67 b4 b4 46  .6.....T..i.g..F
+00f0: cc 06 a9 10 f3 3d 8b 33  79 59 6b 68 ec 11 cc 23  .......3yYkh....
+
+]
+[01/03/19 15:57:56:984 GMT] 00000051 id=00000000 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "com.ibm.ws.sib.jfapchannel.JFapConnectionBrokenException: CWSIJ0051E: An unexpected condition caused a network connection from host 127.0.0.1 using chain InboundSecureMessaging to close. com.ibm.ws.sib.comms.server.clientsupport.ServerTransportReceiveListener.errorOccurred 3-004-0010" at ffdc_19.03.01_15.57.56.0.log
+[01/03/19 15:57:59:104 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[01/03/19 15:57:59:105 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server-specific-invariants.xml
+[01/03/19 15:57:59:106 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestPorts.xml
+[01/03/19 15:57:59:107 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestCommon.xml
+[01/03/19 15:57:59:210 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0018I: The trace state has been changed. The new trace state is *=info:CONFIG_SOURCE...files/blank_server.xml=info:logservice=detail.
+[01/03/19 15:57:59:215 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0040I: The configured trace state included the following specifications that do not match any loggers currently registered in the server: CONFIG_SOURCE...files/blank_server.xml=info Ignore this message if the trace specifications CONFIG_SOURCE...files/blank_server.xml=info are valid.
+[01/03/19 15:57:59:292 GMT] 00000022 id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSIP0217I: The local destination QUEUE1 has been marked for deletion.
+[01/03/19 15:57:59:292 GMT] 0000004e id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[01/03/19 15:57:59:303 GMT] 00000022 id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSIP0217I: The local destination QUEUE2 has been marked for deletion.
+[01/03/19 15:57:59:308 GMT] 00000022 id=00000000 com.ibm.ws.ssl.config.WSKeyStore                             I CWPKI0819I: The default keystore is not created because a password is not configured on the <keyStore id="defaultKeyStore"/> element, and the 'keystore_password' environment variable is not set. 
+[01/03/19 15:57:59:323 GMT] 00000022 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint-ssl has stopped listening for requests on host *  (IPv6) port 8040.
+[01/03/19 15:57:59:333 GMT] 00000022 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel InboundJmsCommsEndpoint-ssl has stopped listening for requests on host *  (IPv6) port 17510.
+[01/03/19 15:57:59:388 GMT] 00000022 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel InboundJmsCommsEndpoint has stopped listening for requests on host *  (IPv6) port 17010.
+[01/03/19 15:57:59:401 GMT] 00000022 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel InboundJmsCommsEndpoint has been started and is now listening for requests on host *  (IPv6) port 7276.
+[01/03/19 15:57:59:781 GMT] 0000004e id=00000000 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been deactivated. 
+[01/03/19 15:57:59:988 GMT] 0000004e id=00000000 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: The security service has stopped.
+[01/03/19 15:58:00:145 GMT] 0000004e id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSIS1589I: The file store has stopped successfully.
+[01/03/19 15:58:00:654 GMT] 0000004e id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSID0121I: JMS server stopped.  
+[01/03/19 15:58:00:668 GMT] 0000004e id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel InboundJmsCommsEndpoint has stopped listening for requests on host *  (IPv6) port 7276.
+[01/03/19 15:58:01:015 GMT] 00000053 id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: The server configuration was successfully updated in 1.910 seconds.
+[01/03/19 15:58:01:031 GMT] 0000004e id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0013I: The server removed the following features: [ssl-1.0, wasJmsServer-1.0, wasJmsSecurity-1.0].
+[01/03/19 15:58:01:031 GMT] 0000004e id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0008I: Feature update completed in 1.849 seconds.
+[01/03/19 15:58:01:382 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[01/03/19 15:58:01:383 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server-specific-invariants.xml
+[01/03/19 15:58:01:384 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestPorts.xml
+[01/03/19 15:58:01:385 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestCommon.xml
+[01/03/19 15:58:01:492 GMT] 0000004e id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[01/03/19 15:58:01:826 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0018I: The trace state has been changed. The new trace state is *=info:CONFIG_SOURCE...files/SecurityDisabledServer.xml=info:SIBCommunications=info:SIBJFapChannel=info:SSL=all:SSLChannel=info.
+[01/03/19 15:58:01:827 GMT] 00000022 id=00000000 com.ibm.ws.logging.internal.TraceSpecification               I TRAS0040I: The configured trace state included the following specifications that do not match any loggers currently registered in the server: CONFIG_SOURCE...files/SecurityDisabledServer.xml=info Ignore this message if the trace specifications CONFIG_SOURCE...files/SecurityDisabledServer.xml=info are valid.
+[01/03/19 15:58:02:038 GMT] 0000004e id=00000000 com.ibm.ws.config.xml.internal.ConfigValidator               A CWWKG0102I: Found conflicting settings for wasJmsEndpoint configuration.
+  Property host has conflicting values:
+    Value localhost is set in file:/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/fatTestPorts.xml.
+    Value * is set in file:/home/nrichard/work/libertyGit/open-liberty/dev/build.image/wlp/usr/servers/FeatureUpdate_com.ibm.ws.messaging.comms.server/server.xml.
+  Property host will be set to *.
+
+[01/03/19 15:58:02:130 GMT] 0000004e id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel InboundJmsCommsEndpoint has been started and is now listening for requests on host *  (IPv6) port 7276.
+[01/03/19 15:58:03:105 GMT] 0000004e id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSID0108I: JMS server has started.  
+[01/03/19 15:58:03:197 GMT] 00000052 id=00000000 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: The server configuration was successfully updated in 1.815 seconds.
+[01/03/19 15:58:03:211 GMT] 0000004e id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [wasJmsServer-1.0].
+[01/03/19 15:58:03:212 GMT] 0000004e id=00000000 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0008I: Feature update completed in 1.787 seconds.
+[01/03/19 15:58:06:641 GMT] 0000001b id=00000000 com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Server shutdown requested on Friday, 1 March 2019 at 15:58. The server FeatureUpdate_com.ibm.ws.messaging.comms.server is shutting down.
+[01/03/19 15:58:06:653 GMT] 00000072 id=00000000 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[01/03/19 15:58:06:666 GMT] 00000052 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host *  (IPv6) port 8030.
+[01/03/19 15:58:06:670 GMT] 00000034 id=00000000 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel InboundJmsCommsEndpoint has stopped listening for requests on host *  (IPv6) port 7276.
+[01/03/19 15:58:07:672 GMT] 00000072 id=00000000 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[01/03/19 15:58:07:747 GMT] 00000072 id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSIS1589I: The file store has stopped successfully.
+[01/03/19 15:58:07:914 GMT] 00000072 id=00000000 com.ibm.ws.sib.utils.ras.SibMessage                          I  CWSID0121I: JMS server stopped.  
+[01/03/19 15:58:08:552 GMT] 00000001 id=00000000 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server FeatureUpdate_com.ibm.ws.messaging.comms.server stopped after 41.668 seconds.
