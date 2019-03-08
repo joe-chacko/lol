@@ -1,9 +1,8 @@
 package com.ibm.websphere.frankenlog;
 
 import java.util.List;
-
-import static java.util.Arrays.asList;
-import static java.util.Collections.unmodifiableList;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public enum LogFile {
     EMPTY_LOG("src/test/resources/empty-trace.log"),
@@ -15,33 +14,46 @@ public enum LogFile {
     PREAMBLE_ONLY_LOG("src/test/resources/preamble-only.log",
             Stanzas.STANDARD_PREAMBLE),
     BLANK_LINE_PREAMBLE_LOG("src/test/resources/blank-line-preamble.log",
-            "",
+            Stanzas.EMPTY_PREAMBLE,
             Stanzas.LINE_ONE_OF_TRACE),
     BOGUS_BRACKETS_LOG("src/test/resources/bogus-brackets-trace.log",
             Stanzas.STANDARD_PREAMBLE,
             Stanzas.LINE_ONE_OF_TRACE,
             Stanzas.BOGUS_BRACKET_TRACE)
-
     ;
 
     private enum Stanzas {
-        ;
-        public static final String STANDARD_PREAMBLE = "" +
-                "********************************************************************************\n" +
-                "product = Acme Widget Wrangler\n" +
-                "trace.specification = *=info:logservice=detail\n" +
-                "********************************************************************************";
-        public static final String LINE_ONE_OF_TRACE = "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 TraceSpec               I TRAS0018I: blah blah";
+        EMPTY_PREAMBLE("", ""),
+        STANDARD_PREAMBLE("",
+                "********************************************************************************",
+                "product = Acme Widget Wrangler",
+                "trace.specification = *=info:logservice=detail",
+                "********************************************************************************"),
+        LINE_ONE_OF_TRACE("",
+                "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 TraceSpec               I TRAS0018I: blah blah"),
 
-        public static final String BOGUS_BRACKET_TRACE = "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 SystemOut               I Some text:\n" +
-                "[22: hello, world]";
+        BOGUS_BRACKET_TRACE("",
+                "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 SystemOut               I Some text:",
+                "[22: hello, world]")
+        ;
+        private final String time;
+        private final String text;
+        private final int lines;
+        Stanzas(String time, String...lines) {
+            this.time = time;
+            this.text = String.join("\n",lines);
+            this.lines = lines.length;
+
+        }
     }
 
     public final String filename;
     public final List<String> stanzaText;
+    public final int lines;
 
-    LogFile(String filename, String...stanzaText) {
+    LogFile(String filename, Stanzas...stanzas) {
         this.filename = filename;
-        this.stanzaText = unmodifiableList(asList(stanzaText));
+        this.stanzaText = Stream.of(stanzas).map(s -> s.text).collect(Collectors.toList());
+        this.lines = Stream.of(stanzas).filter(s -> !s.time.startsWith("-")).mapToInt(s -> s.lines).sum();
     }
 }
