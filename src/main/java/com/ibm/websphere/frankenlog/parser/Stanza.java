@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.TemporalAccessor;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 public class Stanza implements AutoCloseable, Comparable<Stanza> {
     public static Stanza startReading(String filename) throws IOException {
