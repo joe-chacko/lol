@@ -1,12 +1,12 @@
-package com.ibm.websphere.frankenlog;
+package com.ibm.websphere.frankenlog.parser;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.temporal.TemporalAccessor;
+import java.util.List;
 import java.util.Objects;
 
 public class Stanza implements AutoCloseable, Comparable<Stanza> {
-
     public static Stanza startReading(String filename) throws IOException {
         return new StanzaReader(filename).next();
     }
@@ -15,13 +15,23 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
     public final String text;
     public final String source;
     public final LocalDateTime time;
+    public final int lines;
 
-    Stanza(StanzaReader reader, String text, TemporalAccessor time) {
+    /**
+     * Create an immutable record from the provided data.
+     * Parameters will not be modified.
+     */
+    Stanza(StanzaReader reader, List<String> text, TemporalAccessor time) {
         this.reader = reader;
         this.source = reader.filename;
         Objects.requireNonNull(text);
-        this.text = text;
+        this.text = String.join("\n", text);
         this.time = LocalDateTime.from(time);
+        this.lines = text.size();
+    }
+
+    public boolean isPreamble() {
+        return time == LocalDateTime.MIN;
     }
 
     public Stanza next() {

@@ -1,4 +1,4 @@
-package com.ibm.websphere.frankenlog;
+package com.ibm.websphere.frankenlog.parser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -62,9 +62,11 @@ class StanzaReader implements AutoCloseable {
     }
 
     private Stanza createStanza() {
-        final String text = String.join("\n", lines);
-        lines.clear();
-        return new Stanza(this, text, this.previousTime);
+        try {
+            return new Stanza(this, lines, this.previousTime);
+        } finally {
+            lines.clear();
+        }
     }
 
     @Override
