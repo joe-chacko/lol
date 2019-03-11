@@ -70,9 +70,13 @@ class StanzaReader implements AutoCloseable {
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         lines.clear();
-        in.close();
+        try {
+            in.close();
+        } catch(IOException e) {
+            throw new IOError(e);
+        }
     }
 }
 

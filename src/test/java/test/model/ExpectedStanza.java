@@ -1,5 +1,12 @@
 package test.model;
 
+import com.ibm.websphere.frankenlog.parser.Stanza;
+
+import java.time.ZoneId;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public enum ExpectedStanza {
     EMPTY_PREAMBLE("-999999999-01-01T00:00Z[UTC]", ""),
     STANDARD_PREAMBLE("-999999999-01-01T00:00Z[UTC]",
@@ -23,5 +30,16 @@ public enum ExpectedStanza {
         this.text = String.join("\n",lines);
         this.lines = lines.length;
         this.isPreamble = time.startsWith("-");
+    }
+
+    public void verify(Stanza actual) {
+        assertThat("Time Zone should match expected time zone for " + this,
+                actual.time.atZone(ZoneId.of("UTC")).toString(), is(this.time));
+        assertThat("Text should match expected text for " + this,
+                actual.text, is(this.text));
+        assertThat("Line count should match expected line count for " + this,
+                actual.lines, is(this.lines));
+        assertThat("isPreamble should match expected value for " + this,
+                actual.isPreamble(), is(this.isPreamble));
     }
 }

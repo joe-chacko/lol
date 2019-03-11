@@ -12,6 +12,14 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
         return new StanzaReader(filename).next();
     }
 
+    public static Stream<Stanza> toStream (String filename) throws IOException {
+        final StanzaReader reader = new StanzaReader(filename);
+        return Stream
+                .generate(reader::next)
+                .takeWhile(Objects::nonNull)
+                .onClose(reader::close);
+    }
+
     private final StanzaReader reader;
     public final String text;
     public final String source;
@@ -20,7 +28,7 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
 
     /**
      * Create an immutable record from the provided data.
-     * Parameters will not be modified.
+     * Parameters objects will .
      */
     Stanza(StanzaReader reader, List<String> text, TemporalAccessor time) {
         this.reader = reader;
