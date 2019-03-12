@@ -23,10 +23,10 @@ public enum ExpectedStanza {
             "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 SystemOut               I Some text:",
             "[22: hello, world]")
     ;
-    public final boolean isPreamble;
-    public final Instant time;
-    public final String text;
-    public final int lines;
+    private final boolean isPreamble;
+    private final Instant time;
+    private final String text;
+    private final int lines;
 
     private ExpectedStanza(String time, String...lines) {
         this.isPreamble = time == null;
@@ -37,12 +37,28 @@ public enum ExpectedStanza {
 
     public void verify(Stanza actual) {
         assertThat("Time Zone should match expected time zone for " + this,
-                actual.time, is(this.time));
+                actual.getTime(), is(this.time));
         assertThat("Text should match expected text for " + this,
-                actual.text, is(this.text));
+                actual.getText(), is(this.text));
         assertThat("Line count should match expected line count for " + this,
-                actual.lines, is(this.lines));
+                actual.getLines(), is(this.lines));
         assertThat("isPreamble should match expected value for " + this,
                 actual.isPreamble(), is(this.isPreamble));
+    }
+
+    public boolean isPreamble() {
+        return isPreamble;
+    }
+
+    public Instant getTime() {
+        return time;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public int getLines() {
+        return lines;
     }
 }

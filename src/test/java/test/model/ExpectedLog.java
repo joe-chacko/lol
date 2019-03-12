@@ -30,22 +30,38 @@ public enum ExpectedLog {
             BOGUS_BRACKET_TRACE)
     ;
 
-    public final String filename;
-    public final boolean hasPreamble;
-    public final List<ExpectedStanza> stanzas;
-    public final int lines;
+    private final String filename;
+    private final boolean hasPreamble;
+    private final List<ExpectedStanza> stanzas;
+    private final int lines;
 
     ExpectedLog(String filename, ExpectedStanza...stanzas) {
         this.filename = filename;
         // if the first stanza has a negative time stamp, it is a pre-amble
-        this.hasPreamble = Stream.of(stanzas).findFirst().map(s -> s.isPreamble).orElse(false);
+        this.hasPreamble = Stream.of(stanzas).findFirst().map(ExpectedStanza::isPreamble).orElse(false);
         // create an immutable list of stanzas
         this.stanzas = Stream.of(stanzas).collect(toUnmodifiableList());
         // add up the count of lines not including the preamble
-        this.lines = Stream.of(stanzas).filter(s -> !s.isPreamble).mapToInt(s -> s.lines).sum();
+        this.lines = Stream.of(stanzas).filter(ExpectedStanza::isPreamble).mapToInt(ExpectedStanza::getLines).sum();
     }
 
     public void verify(Stream<Stanza> actualStanzas) {
         Streams.zip(this.stanzas.stream(), actualStanzas, ExpectedStanza::verify);
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public boolean hasPreamble() {
+        return hasPreamble;
+    }
+
+    public List<ExpectedStanza> getStanzas() {
+        return stanzas;
+    }
+
+    public int getLines() {
+        return lines;
     }
 }
