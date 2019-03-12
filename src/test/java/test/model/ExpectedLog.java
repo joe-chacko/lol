@@ -33,10 +33,6 @@ public enum ExpectedLog {
     public final String filename;
     public final boolean hasPreamble;
     public final List<ExpectedStanza> stanzas;
-    public final List<String> stanzaTimes;
-    public final List<String> stanzaTexts;
-    public final List<Integer> stanzaLines;
-    public final List<Boolean> stanzaPreambles;
     public final int lines;
 
     ExpectedLog(String filename, ExpectedStanza...stanzas) {
@@ -45,14 +41,6 @@ public enum ExpectedLog {
         this.hasPreamble = Stream.of(stanzas).findFirst().map(s -> s.isPreamble).orElse(false);
         // create an immutable list of stanzas
         this.stanzas = Stream.of(stanzas).collect(toUnmodifiableList());
-        // create an immutable list of stanza texts
-        this.stanzaTexts = Stream.of(stanzas).map(s -> s.text).collect(toUnmodifiableList());
-        // create an immutable list of stanza times
-        this.stanzaTimes = Stream.of(stanzas).map(s -> s.time).collect(toUnmodifiableList());
-        // create an immutable list of stanza line counts
-        this.stanzaLines = Stream.of(stanzas).map(s -> s.lines).collect(toUnmodifiableList());
-        // create an immutable list of booleans of whether the stanzas are preambles
-        this.stanzaPreambles = Stream.of(stanzas).map(s -> s.isPreamble).collect(toUnmodifiableList());
         // add up the count of lines not including the preamble
         this.lines = Stream.of(stanzas).filter(s -> !s.isPreamble).mapToInt(s -> s.lines).sum();
     }
