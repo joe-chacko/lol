@@ -2,7 +2,9 @@ package test.model;
 
 import com.ibm.websphere.frankenlog.parser.Stanza;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -22,13 +24,13 @@ public enum ExpectedStanza {
             "[22: hello, world]")
     ;
     public final boolean isPreamble;
-    public final LocalDateTime time;
+    public final Instant time;
     public final String text;
     public final int lines;
 
     private ExpectedStanza(String time, String...lines) {
         this.isPreamble = time == null;
-        this.time = isPreamble ? LocalDateTime.MIN : LocalDateTime.parse(time);
+        this.time = isPreamble ? Instant.MIN : LocalDateTime.parse(time).toInstant(ZoneOffset.UTC);
         this.text = String.join("\n",lines);
         this.lines = lines.length;
     }

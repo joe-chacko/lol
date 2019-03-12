@@ -5,10 +5,10 @@ import java.io.FileReader;
 import java.io.IOError;
 import java.io.IOException;
 import java.text.ParsePosition;
-import java.time.LocalDateTime;
+import java.time.Instant;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +21,7 @@ class StanzaReader implements AutoCloseable {
     private final BufferedReader in;
     private final List<String> lines;
 
-    private TemporalAccessor previousTime = LocalDateTime.MIN;
+    private Instant previousTime = Instant.MIN;
 
     StanzaReader(String filename) throws IOException {
         this.filename = filename;
@@ -30,8 +30,8 @@ class StanzaReader implements AutoCloseable {
         this.lines = new ArrayList<>();
     }
 
-    TemporalAccessor parseTime(String text) {
-        return formatter.parse(text, new ParsePosition(0));
+    Instant parseTime(String text) {
+        return ZonedDateTime.from(formatter.parse(text, new ParsePosition(0))).toInstant();
     }
 
     Stanza next() {
@@ -42,7 +42,7 @@ class StanzaReader implements AutoCloseable {
             // concatenate lines until the nextLine timestamp or the end of the stream
             while (null != (nextLine = in.readLine())) {
                 try {
-                    TemporalAccessor time = parseTime(nextLine);
+                    Instant time = parseTime(nextLine);
                     try {
                         if (!lines.isEmpty()) return createStanza();
                     } finally {
