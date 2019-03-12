@@ -1,7 +1,0 @@
-********************************************************************************
-product = Acme Widget Wrangler
-trace.specification = *=info:logservice=detail
-********************************************************************************
-[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 TraceSpec               I TRAS0018I: blah blah
-[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 SystemOut               I Some text:
-[22: hello, world]
