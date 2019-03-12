@@ -39,7 +39,7 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
     }
 
     public boolean isPreamble() {
-        return time == Instant.MIN;
+        return Instant.MIN.equals(time);
     }
 
     public Stanza next() {
