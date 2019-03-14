@@ -18,6 +18,12 @@ public enum ExpectedStanza {
             "********************************************************************************"),
     LINE_ONE_OF_TRACE("2019-03-01T15:57:32.780",
             "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 TraceSpec               I TRAS0018I: blah blah"),
+    LINE_TWO_OF_TRACE("2019-03-01T15:57:33.550",
+            "[01/03/19 15:57:33:550 GMT] 00000001 id=00000000 Other-Component         I XYZZY0001I: blah blah"),
+    LINE_ONE_OF_TRACE_PST("2019-03-01T15:57:32.780",
+            "[01/03/19 07:57:32:780 PST] 00000001 id=00000000 TraceSpec               I TRAS0018I: blah blah"),
+    LINE_TWO_OF_TRACE_EST("2019-03-01T15:57:33.550",
+            "[01/03/19 10:57:33:550 EST] 00000001 id=00000000 Other-Component         I XYZZY0001I: blah blah"),
     BOGUS_BRACKET_TRACE("2019-03-01T15:57:32.780",
             "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 SystemOut               I Some text:",
             "[22: hello, world]")

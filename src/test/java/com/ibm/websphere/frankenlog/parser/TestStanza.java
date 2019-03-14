@@ -33,6 +33,5 @@ public class TestStanza {
                 expectedLog.verify(Streams.from(reader::next));
             }
         }
-
     }
 }

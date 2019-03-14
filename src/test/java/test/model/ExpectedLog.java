@@ -14,6 +14,9 @@ import java.util.stream.Stream;
 import static test.model.ExpectedStanza.BOGUS_BRACKET_TRACE;
 import static test.model.ExpectedStanza.EMPTY_PREAMBLE;
 import static test.model.ExpectedStanza.LINE_ONE_OF_TRACE;
+import static test.model.ExpectedStanza.LINE_ONE_OF_TRACE_PST;
+import static test.model.ExpectedStanza.LINE_TWO_OF_TRACE;
+import static test.model.ExpectedStanza.LINE_TWO_OF_TRACE_EST;
 import static test.model.ExpectedStanza.STANDARD_PREAMBLE;
 import static test.util.Streams.toUnmodifiableList;
 
@@ -29,9 +32,18 @@ public enum ExpectedLog {
     BLANK_LINE_PREAMBLE_LOG(
             EMPTY_PREAMBLE,
             LINE_ONE_OF_TRACE),
+    TWO_LINE_LOG(
+            STANDARD_PREAMBLE,
+            LINE_ONE_OF_TRACE,
+            LINE_TWO_OF_TRACE),
     BOGUS_BRACKETS_LOG(
             STANDARD_PREAMBLE,
             LINE_ONE_OF_TRACE,
+            BOGUS_BRACKET_TRACE),
+    MIXED_ZONE_LOG(
+            STANDARD_PREAMBLE,
+            LINE_ONE_OF_TRACE_PST,
+            LINE_TWO_OF_TRACE_EST,
             BOGUS_BRACKET_TRACE),
     ;
 
