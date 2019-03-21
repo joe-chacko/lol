@@ -6,7 +6,7 @@ FrankenLog
           It's alive, it's alive, it's alive! It's ALIVE!
 :Victor:  Henry — in the name of God!
 :Henry:   Oh in the name of God! Now I know what it feels like to be God!
--- *Frankenstein* the movie, 1931
+— *Frankenstein* the movie, 1931
 
 
 Motivation
