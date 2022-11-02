@@ -23,6 +23,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -94,10 +95,11 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
 
     static class StanzaReader implements AutoCloseable {
         static final String DEFAULT_TIMESTAMP_FORMAT = "'['dd/MM/yy HH:mm:ss:SSS zzz']'";
-        static final DateTimeFormatter DEFAULT_TIMESTAMP_FORMATTER = DateTimeFormatter.ofPattern(DEFAULT_TIMESTAMP_FORMAT);
+        static final DateTimeFormatter DEFAULT_TIMESTAMP_FORMATTER = DateTimeFormatter.ofPattern(DEFAULT_TIMESTAMP_FORMAT)
+                //The locale will differ from once machine to another, so it's important to specify the locale to be used
+                .withLocale(Locale.US);
 
         final String filename;
-        private final DateTimeFormatter formatter;
         private final BufferedReader in;
         private final List<String> lines;
 
@@ -105,13 +107,12 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
 
         StanzaReader(String filename) throws IOException {
             this.filename = filename;
-            this.formatter = DEFAULT_TIMESTAMP_FORMATTER;
             this.in = new BufferedReader(new FileReader(filename));
             this.lines = new ArrayList<>();
         }
 
-        Instant parseTime(String text) {
-            return ZonedDateTime.from(formatter.parse(text, new ParsePosition(0))).toInstant();
+        static Instant parseTime(String text) {
+            return ZonedDateTime.from(DEFAULT_TIMESTAMP_FORMATTER.parse(text, new ParsePosition(0))).toInstant();
         }
 
         Stanza next() {

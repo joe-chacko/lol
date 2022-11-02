@@ -25,7 +25,7 @@ import java.util.stream.Stream;
 public class TestStanza {
     @ParameterizedTest(name = "parse time for {0}")
     @EnumSource(ExpectedStanza.class)
-    public void testParseTime(ExpectedStanza expectedStanza) throws Exception {
+    public void testParseTime(ExpectedStanza expectedStanza) {
         if (expectedStanza.isPreamble()) return;
         StanzaReader.parseTime(expectedStanza.getText().split("\n")[0]);
     }
