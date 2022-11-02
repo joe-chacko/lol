@@ -12,15 +12,24 @@
  */
 package com.ibm.websphere.frankenlog.parser;
 
+import com.ibm.websphere.frankenlog.parser.Stanza.StanzaReader;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import test.model.ExpectedLog;
+import test.model.ExpectedStanza;
 import test.util.Streams;
 
 import java.io.IOException;
 import java.util.stream.Stream;
 
 public class TestStanza {
+    @ParameterizedTest(name = "parse time for {0}")
+    @EnumSource(ExpectedStanza.class)
+    public void testParseTime(ExpectedStanza expectedStanza) throws Exception {
+        if (expectedStanza.isPreamble()) return;
+        StanzaReader.parseTime(expectedStanza.getText().split("\n")[0]);
+    }
+
     @ParameterizedTest(name = "test Stanzas for {0}")
     @EnumSource(ExpectedLog.class)
     public void testStanzaStartReading(ExpectedLog expectedLog) throws Exception {
