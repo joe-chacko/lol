@@ -10,7 +10,7 @@
  *     IBM Corporation - initial API and implementation
  * =============================================================================
  */
-package com.ibm.websphere.frankenlog.parser;
+package io.openliberty.frankenlog.parser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
