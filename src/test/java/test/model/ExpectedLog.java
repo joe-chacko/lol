@@ -12,7 +12,7 @@
  */
 package test.model;
 
-import io.openliberty.frankenlog.parser.Stanza;
+import io.openliberty.frankenlog.Stanza;
 import test.util.Streams;
 
 import java.io.File;
