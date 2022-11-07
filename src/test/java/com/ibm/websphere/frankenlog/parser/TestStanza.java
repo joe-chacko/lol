@@ -20,6 +20,10 @@ import test.model.ExpectedStanza;
 import test.util.Streams;
 
 import java.io.IOException;
+import java.rmi.StubNotFoundException;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TestStanza {
@@ -53,6 +57,19 @@ public class TestStanza {
             try (Stanza.StanzaReader reader = new Stanza.StanzaReader(expectedLog.getFilename())) {
                 expectedLog.verify(Streams.from(reader::next));
             }
+        }
+    }
+
+    @ParameterizedTest(name = "test Stanzas for {0}")
+    @EnumSource(ExpectedLog.class)
+    public void testFileStitching(ExpectedLog expectedLog) throws Exception {
+        System.out.println("-----NEW TEST-----");
+        try (Stream<Stanza> stream = Stanza.toStream(expectedLog.getFilename())) {
+            stream.sorted(Comparator.comparing(Stanza::getTime))
+                    .map(e -> "["+ e.getTime() + "]: " + e.getText())
+                    .forEach(System.out::println);
+
+//            expectedLog.verify(stream);
         }
     }
 }
