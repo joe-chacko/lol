@@ -12,7 +12,7 @@
  */
 package test.model;
 
-import io.openliberty.frankenlog.parser.Stanza;
+import io.openliberty.frankenlog.Stanza;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

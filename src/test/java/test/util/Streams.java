@@ -19,12 +19,16 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toUnmodifiableList;
 
 public enum Streams {
     ;
     public static <T> Collector<T, ?, List<T>> toUnmodifiableList() {
-        return java.util.stream.Collectors.collectingAndThen(java.util.stream.Collectors.toList(), Collections::unmodifiableList);
+        return collectingAndThen(Collectors.toList(), Collections::unmodifiableList);
     }
 
     public static <T, U> void zip(Stream<T> stream1, Stream<U> stream2, BiConsumer<T, U> biConsumer) {
@@ -42,4 +46,6 @@ public enum Streams {
     public static <T> Stream<T> from(T first, Function<T,T> successor) {
         return Iterators.asStream(Iterators.iterateOver(first, successor));
     }
+
+    public static <T> List<T> list(Stream<T> stream) { return stream.collect(toUnmodifiableList()); }
 }

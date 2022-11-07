@@ -10,9 +10,10 @@
  *     IBM Corporation - initial API and implementation
  * =============================================================================
  */
-package io.openliberty.frankenlog.parser;
+package io.openliberty.frankenlog;
 
-import io.openliberty.frankenlog.parser.Stanza.StanzaReader;
+import io.openliberty.frankenlog.Stanza;
+import io.openliberty.frankenlog.Stanza.StanzaReader;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import test.model.ExpectedLog;
