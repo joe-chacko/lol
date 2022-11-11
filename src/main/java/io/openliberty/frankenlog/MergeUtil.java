@@ -17,7 +17,7 @@ public enum MergeUtil {
     /**
      * A spliterator that gets the lowest element from multiple streams
      */
-    static class MergingSpliterator<T extends Comparable<T>> implements Spliterator<T> {
+    private static class MergingSpliterator<T extends Comparable<T>> implements Spliterator<T> {
         private final PriorityQueue<ComparableIterator<T>> pq;
 
         MergingSpliterator(Stream<T>...streams) {
