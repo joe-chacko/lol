@@ -10,8 +10,13 @@ import java.util.stream.StreamSupport;
 
 public enum MergeUtil {
     ;
-    public static <T extends Comparable<T>> Stream<T> merge(Stream<T>...streams) {
-        return StreamSupport.stream(new MergingSpliterator<>(streams), false);
+
+    public static <T extends Comparable<T>> Stream<T> merge(Stream<T>... streams) {
+        return merge(Stream.of(streams));
+    }
+
+    public static <T extends Comparable<T>> Stream<T> merge(Stream<Stream<T>> streamOfStreams) {
+        return StreamSupport.stream(new MergingSpliterator<>(streamOfStreams), false);
     }
 
     /**
@@ -20,14 +25,10 @@ public enum MergeUtil {
     private static class MergingSpliterator<T extends Comparable<T>> implements Spliterator<T> {
         private final PriorityQueue<ComparableIterator<T>> pq;
 
-        MergingSpliterator(Stream<T>...streams) {
-            this.pq = new PriorityQueue<>(streams.length);
+        MergingSpliterator(Stream<Stream<T>> streamOfStreams) {
+            this.pq = new PriorityQueue<>();
             // put all the non-empty streams into the priority queue as comparable iterators
-            Stream.of(streams)
-                    .map(Stream::iterator)
-                    .map(ComparableIterator::new)
-                    .filter(Iterator::hasNext)
-                    .forEach(pq::add);
+            streamOfStreams.map(Stream::iterator).map(ComparableIterator::new).filter(Iterator::hasNext).forEach(pq::add);
         }
 
         public boolean tryAdvance(Consumer<? super T> action) {
@@ -48,9 +49,17 @@ public enum MergeUtil {
             return true;
         }
 
-        public Spliterator<T> trySplit() { return null; }
-        public long estimateSize() { return Long.MAX_VALUE; }
-        public int characteristics() { return ORDERED| NONNULL; }
+        public Spliterator<T> trySplit() {
+            return null;
+        }
+
+        public long estimateSize() {
+            return Long.MAX_VALUE;
+        }
+
+        public int characteristics() {
+            return ORDERED | NONNULL;
+        }
     }
 
     /**
@@ -76,7 +85,9 @@ public enum MergeUtil {
         }
 
         @Override
-        public boolean hasNext() { return nextElement != null; }
+        public boolean hasNext() {
+            return nextElement != null;
+        }
 
         @Override
         public int compareTo(ComparableIterator<T> that) {

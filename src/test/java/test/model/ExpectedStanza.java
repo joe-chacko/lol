@@ -33,9 +33,9 @@ public enum ExpectedStanza {
     LINE_TWO_OF_TRACE("2019-03-01T15:57:33.550",
             "[01/03/19 15:57:33:550 GMT] 00000001 id=00000000 Other-Component         I XYZZY0001I: blah blah"),
     LINE_ONE_OF_TRACE_PST("2019-03-01T15:57:32.780",
-            "[01/03/19 07:57:32:780 PST] 00000001 id=00000000 TraceSpec               I TRAS0018I: blah blah"),
+            "[03/01/19 07:57:32:780 PST] 00000001 id=00000000 TraceSpec               I TRAS0018I: blah blah"),
     LINE_TWO_OF_TRACE_EST("2019-03-01T14:57:33.550",
-            "[01/03/19 09:57:33:550 EST] 00000001 id=00000000 Other-Component         I XYZZY0001I: blah blah"),
+            "[03/01/19 09:57:33:550 EST] 00000001 id=00000000 Other-Component         I XYZZY0001I: blah blah"),
     BOGUS_BRACKET_TRACE("2019-03-01T15:57:32.780",
             "[01/03/19 15:57:32:780 GMT] 00000001 id=00000000 SystemOut               I Some text:",
             "[22: hello, world]")
@@ -44,24 +44,21 @@ public enum ExpectedStanza {
     private final Instant time;
     private final String text;
     private final int lines;
+    private final String expectedText;
 
     private ExpectedStanza(String time, String...lines) {
         this.isPreamble = time == null;
         this.time = isPreamble ? Instant.MIN : LocalDateTime.parse(time).toInstant(ZoneOffset.UTC);
         this.text = String.join("\n",lines);
+        this.expectedText = text.replaceFirst("[^\\]]*\\] ", "");
         this.lines = lines.length;
     }
 
     public void verify(Stanza actual) {
-        // System.out.println(actual.getTime());
-        // System.out.println(actual.getText());
-        // System.out.println(actual.getLines());
-        // System.out.println("***************************************************");
-        
         assertThat("Time Zone should match expected time zone for " + this,
                 actual.getTime(), is(this.time));
         assertThat("Text should match expected text for " + this,
-                actual.getText(), is(this.text));
+                actual.getText(), is(this.expectedText));
         assertThat("Line count should match expected line count for " + this,
                 actual.getLines(), is(this.lines));
         assertThat("isPreamble should match expected value for " + this,

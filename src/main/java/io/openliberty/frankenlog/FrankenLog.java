@@ -6,16 +6,15 @@ import picocli.CommandLine.HelpCommand;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.PropertiesDefaultProvider;
 
+import java.io.File;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
-@Command(
-        name = "franken",
-        mixinStandardHelpOptions = true,
-        description = "FrankenLog - Unify concurrent logs into a coherent whole",
-        version = "Frankenlog 1.0",
-        subcommands = HelpCommand.class, // other subcommands are annotated methods
-        defaultValueProvider = PropertiesDefaultProvider.class
-)
+import static io.openliberty.frankenlog.MergeUtil.merge;
+
+@Command(name = "franken", mixinStandardHelpOptions = true, description = "FrankenLog - Unify concurrent logs into a coherent whole", version = "Frankenlog 1.0", subcommands = HelpCommand.class, // other subcommands are annotated methods
+        defaultValueProvider = PropertiesDefaultProvider.class)
 public class FrankenLog {
     public static void main(String... args) {
         FrankenLog frankenlog = new FrankenLog();
@@ -24,12 +23,13 @@ public class FrankenLog {
         System.exit(exitCode);
     }
 
-    @Command(name = "stitch", description = "Unify and output concurrent logs"
-    )
-    void stitch(
-            @Parameters(paramLabel = "numbers", arity = "1..*", description = "The numbers to add")
-            List<String> numberInputs) {
-        Integer sum = numberInputs.stream().mapToInt(Integer::valueOf).sum();
-        System.out.println(sum);
+    @Command(name = "stitch", description = "Unify and output concurrent logs")
+    void stitch(@Parameters(paramLabel = "files", arity = "1..*", description = "The paths to the files you would like to merge") List<File> files) {
+        var logFiles = files.stream().map(LogFile::new).collect(Collectors.toUnmodifiableList());
+        logFiles.forEach(file -> System.out.println(file.shortname + " = " + file.filename));
+        merge(logFiles.stream().map(LogFile::getStanzas))
+                .map(Stanza::getDisplayText)
+                .forEach(System.out::println);
     }
+
 }
