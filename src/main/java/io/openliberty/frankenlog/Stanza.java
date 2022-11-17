@@ -17,19 +17,13 @@ import java.util.*;
 
 public class Stanza implements AutoCloseable, Comparable<Stanza> {
 
-    private final LogFile reader;
+    private final LogReader reader;
     private final String text;
-    private final String source;
     private String unformattedTime;
     private final Instant time;
     private final int lines;
-    /**
-     * Create an immutable record from the provided data.
-     * Parameters objects will .
-     */
-    Stanza(LogFile reader, List<String> text, Instant time, String unformattedTime) {
+    Stanza(LogReader reader, List<String> text, Instant time, String unformattedTime) {
         this.reader = reader;
-        this.source = reader.filename;
         Objects.requireNonNull(text);
         this.text = String.join("\n", text);
         this.time = time;
@@ -49,16 +43,13 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
 
     public String getText() {return text;}
 
-    public String getShortname() {return reader.shortname;}
+    public String getShortname() {return reader.logFile.shortname;}
 
     public String getDisplayText(){
         return isPreamble() ?
-                String.format("\n%s\n%s", reader.shortname, getText()) :
-                reader.formatter.format(this.getTime()) + this.getText();
+                String.format("\n%s\n%s", reader.logFile.shortname, getText()) :
+                reader.logFile.formatter.format(this.getTime()) + this.getText();
     }
-
-    public String getSource() {return source;}
-
     public Instant getTime() {return time;}
 
     public int getLines() {return lines;}

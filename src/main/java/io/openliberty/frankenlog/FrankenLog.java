@@ -7,10 +7,7 @@ import picocli.CommandLine.Parameters;
 import picocli.CommandLine.PropertiesDefaultProvider;
 
 import java.io.File;
-import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static io.openliberty.frankenlog.MergeUtil.merge;
 
@@ -27,29 +24,35 @@ public class FrankenLog {
     @Command(name = "stitch", description = "Unify and output concurrent logs")
     void stitch(
             @Parameters(
-                    paramLabel = "logFiles",
+                    paramLabel = "logReaders",
                     arity = "1..*",
                     converter = LogFile.Converter.class,
                     description = "The paths to the files you would like to merge"
             )
             List<LogFile> logFiles) {
         logFiles.forEach(file -> System.out.println(file.shortname + " = " + file.filename));
-        merge(logFiles.stream().map(LogFile::getStanzas))
+        merge(logFiles.stream().map(LogReader::new).map(LogReader::getStanzas))
                 .map(Stanza::getDisplayText)
                 .forEach(System.out::println);
     }
 
     @Command(name = "stab", description = "Guess the inputted log's date format")
-    void stab(@Parameters(paramLabel = "files", arity = "1..*", description = "The paths to the files you would like to guess the date format for") List<File> files) {
+    void stab(
+            @Parameters(
+                    paramLabel = "files",
+                    arity = "1..*",
+                    converter = LogFile.Converter.class,
+                    description = "The paths to the files you would like to guess the date format for"
+            )
+            List<LogFile> files) {
         files.forEach(this::stab);
     }
 
-    private void stab(File file) {
-        LogFile lf = new LogFile(file);
-        Stanza stanza = lf.getStanzas().filter(e-> !e.isPreamble()).findAny().orElse(null);
+    private void stab(LogFile lf) {
+        Stanza stanza = new LogReader(lf).getStanzas().filter(e-> !e.isPreamble()).findAny().orElse(null);
         System.out.println(stanza != null ?
-                file.getName() + " -> " + LogFile.guessTimeStamp(stanza.getUnformattedTime()) :
-                file.getName() + " -> No Timestamps found");
+                lf.filename + " -> " + LogFile.TimestampFormat.guessTimeStamp(stanza.getUnformattedTime()) :
+                lf.filename + " -> No Timestamps found");
     }
 
 }
