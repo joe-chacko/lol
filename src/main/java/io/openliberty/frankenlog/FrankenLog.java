@@ -9,6 +9,7 @@ import picocli.CommandLine.PropertiesDefaultProvider;
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static io.openliberty.frankenlog.MergeUtil.merge;
@@ -44,6 +45,11 @@ public class FrankenLog {
     }
 
     private void stab(File file) {
+        LogFile lf = new LogFile(file);
+        Stanza stanza = lf.getStanzas().filter(e-> !e.isPreamble()).findAny().orElse(null);
+        System.out.println(stanza != null ?
+                file.getName() + " -> " + LogFile.guessTimeStamp(stanza.getUnformattedTime()) :
+                file.getName() + " -> No Timestamps found");
     }
 
 }

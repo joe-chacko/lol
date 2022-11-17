@@ -16,7 +16,6 @@ package io.openliberty.frankenlog;
 import picocli.CommandLine;
 
 import java.io.*;
-import java.sql.Time;
 import java.text.ParsePosition;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -43,9 +42,7 @@ class LogFile implements AutoCloseable {
             return new LogFile(value);
         }
     }
-
-    ;
-    enum TimestampFormat{
+    enum TimestampFormat {
         DMY("'['dd/MM/yy H:mm:ss:SSS zzz']'", Locale.UK),
         MDY("'['MM/dd/yy H:mm:ss:SSS zzz']'", Locale.US),
         YMD("'['yy/MM/dd H:mm:ss:SSS zzz']'", Locale.PRC),
@@ -72,8 +69,8 @@ class LogFile implements AutoCloseable {
     final TimestampFormat format;
     private final BufferedReader in;
     private final List<String> lines = new ArrayList<>();
-
     private Instant previousTime = Instant.MIN;
+    private String previousUnformattedTime = "";
 
     LogFile(String filename, TimestampFormat tsf, Reader rdr) {
         this.filename = filename;
@@ -82,10 +79,10 @@ class LogFile implements AutoCloseable {
     }
 
     LogFile(String filename, TimestampFormat tsf) {
-        this(filename, tsf, getReader(filename));
+        this(filename,tsf, getReader(filename));
     }
 
-    LogFile(String filename){
+    LogFile(String filename) {
         this(filename, TimestampFormat.NON);
     }
 
@@ -110,14 +107,17 @@ class LogFile implements AutoCloseable {
         return tsf.parse(timeStamp);
     }
 
-    static Instant parseTime(String timeStamp) {
+    static TimestampFormat guessTimeStamp(String timeStamp) {
         boolean usDate = US_TIME_ZONES
                 .stream()
                 .anyMatch(timeStamp::contains);
-        TimestampFormat tsf = usDate
+        return usDate
                 ? TimestampFormat.MDY
                 : TimestampFormat.DMY;
-        return tsf.parse(timeStamp);
+    }
+
+    static Instant parseTime(String timeStamp) {
+        return guessTimeStamp(timeStamp).parse(timeStamp);
     }
 
 
@@ -137,6 +137,7 @@ class LogFile implements AutoCloseable {
                         if (!lines.isEmpty()) return createStanza();
                     } finally {
                         this.previousTime = time;
+                        this.previousUnformattedTime = timeStamp;
                     }
                 } catch (DateTimeParseException ignored) {
                     // there was no timestamp, so this is a continuation line
@@ -153,7 +154,7 @@ class LogFile implements AutoCloseable {
 
     private Stanza createStanza() {
         try {
-            return new Stanza(this, lines, this.previousTime);
+            return new Stanza(this, lines, this.previousTime, this.previousUnformattedTime);
         } finally {
             lines.clear();
         }

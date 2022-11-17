@@ -20,18 +20,20 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
     private final LogFile reader;
     private final String text;
     private final String source;
+    private String unformattedTime;
     private final Instant time;
     private final int lines;
     /**
      * Create an immutable record from the provided data.
      * Parameters objects will .
      */
-    Stanza(LogFile reader, List<String> text, Instant time) {
+    Stanza(LogFile reader, List<String> text, Instant time, String unformattedTime) {
         this.reader = reader;
         this.source = reader.filename;
         Objects.requireNonNull(text);
         this.text = String.join("\n", text);
         this.time = time;
+        this.unformattedTime = unformattedTime;
         this.lines = text.size();
     }
 
@@ -60,5 +62,7 @@ public class Stanza implements AutoCloseable, Comparable<Stanza> {
     public Instant getTime() {return time;}
 
     public int getLines() {return lines;}
+
+    public String getUnformattedTime() { return unformattedTime; }
 
 }
