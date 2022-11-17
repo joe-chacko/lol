@@ -13,7 +13,10 @@
 
 package io.openliberty.frankenlog;
 
+import picocli.CommandLine;
+
 import java.io.*;
+import java.sql.Time;
 import java.text.ParsePosition;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -22,16 +25,43 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class LogFile implements AutoCloseable {
-    static final String DEFAULT_TIMESTAMP_FORMAT = "'['dd/MM/yy H:mm:ss:SSS zzz']'";
-    static final String US_TIMESTAMP_FORMAT = "'['MM/dd/yy H:mm:ss:SSS zzz']'";
-    static final DateTimeFormatter DEFAULT_TIMESTAMP_FORMATTER = DateTimeFormatter.ofPattern(DEFAULT_TIMESTAMP_FORMAT);
-    static final DateTimeFormatter US_TIMESTAMP_FORMATTER = DateTimeFormatter.ofPattern(US_TIMESTAMP_FORMAT)
-            //The locale will differ from once machine to another, so it's important to specify the locale to be used
-            .withLocale(Locale.US);
+    static class Converter implements CommandLine.ITypeConverter<LogFile> {
+        public LogFile convert(String value) throws Exception {
+            Pattern p = Pattern.compile("(.*):([YMD]{3})$");
+            Matcher m = p.matcher(value);
+            if (m.find()) {
+                String filename = m.group(1);
+                TimestampFormat t = TimestampFormat.valueOf(m.group(2));
+                return new LogFile(filename, t);
+            }
+            return new LogFile(value);
+        }
+    }
+
+    ;
+    enum TimestampFormat{
+        DMY("'['dd/MM/yy H:mm:ss:SSS zzz']'", Locale.UK),
+        MDY("'['MM/dd/yy H:mm:ss:SSS zzz']'", Locale.US),
+        YMD("'['yy/MM/dd H:mm:ss:SSS zzz']'", Locale.PRC),
+        NON("'['dd/MM/yy H:mm:ss:SSS zzz']'", Locale.UK);
+        private final DateTimeFormatter formatter;
+
+        TimestampFormat(String format, Locale locale) {
+            this.formatter = DateTimeFormatter.ofPattern(format, locale);
+        }
+
+        Instant parse(String timestamp) {
+            var time = formatter.parse(timestamp.replaceAll(",", ""), new ParsePosition(0));
+            var zdTime = ZonedDateTime.from(time);
+            return zdTime.toInstant();
+        }
+    }
     static final Set<String> US_TIME_ZONES = Stream.of("AST", "EST", "EDT", "CST", "CDT", "MST", "MDT", "PST", "AST", "PDT", "AKST", "AKDT", "HST", "HAST", "HADT", "SST", "SDT", "CHST")
             .collect(Collectors.toUnmodifiableSet());
     final String filename;
@@ -39,18 +69,24 @@ class LogFile implements AutoCloseable {
     final String shortname = String.format("%c%1$c", NEXT_CHAR.getAndIncrement());
     final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("'['yy/MM/dd H:mm:ss:SSS '" + shortname + "] '").withZone(ZoneOffset.UTC);
 
+    final TimestampFormat format;
     private final BufferedReader in;
     private final List<String> lines = new ArrayList<>();
 
     private Instant previousTime = Instant.MIN;
 
-    LogFile(String filename, Reader rdr) {
+    LogFile(String filename, TimestampFormat tsf, Reader rdr) {
         this.filename = filename;
+        this.format = tsf;
         this.in = new BufferedReader(rdr);
     }
 
-    LogFile(String filename) {
-        this(filename, getReader(filename));
+    LogFile(String filename, TimestampFormat tsf) {
+        this(filename, tsf, getReader(filename));
+    }
+
+    LogFile(String filename){
+        this(filename, TimestampFormat.NON);
     }
 
     private static Reader getReader(String filename) {
@@ -70,15 +106,20 @@ class LogFile implements AutoCloseable {
         return text.substring(0, closeBracketIndex + 1);
     }
 
+    static Instant parseTime(String timeStamp, TimestampFormat tsf) {
+        return tsf.parse(timeStamp);
+    }
+
     static Instant parseTime(String timeStamp) {
         boolean usDate = US_TIME_ZONES
                 .stream()
                 .anyMatch(timeStamp::contains);
-        DateTimeFormatter TIMESTAMP_FORMATTER = usDate
-                ? US_TIMESTAMP_FORMATTER
-                : DEFAULT_TIMESTAMP_FORMATTER;
-        return ZonedDateTime.from(TIMESTAMP_FORMATTER.parse(timeStamp.replaceAll(",", ""), new ParsePosition(0))).toInstant();
+        TimestampFormat tsf = usDate
+                ? TimestampFormat.MDY
+                : TimestampFormat.DMY;
+        return tsf.parse(timeStamp);
     }
+
 
     Stanza next() {
         try {
@@ -89,7 +130,7 @@ class LogFile implements AutoCloseable {
             while (null != (nextLine = in.readLine())) {
                 try {
                     String timeStamp = getTimeStamp(nextLine);
-                    Instant time = parseTime(timeStamp);
+                    Instant time = format == TimestampFormat.NON ? parseTime(timeStamp) : parseTime(timeStamp, format);
                     //If we get to here there was a time stamp and it is not the preamble or a continuation line
                     nextLine = nextLine.substring(timeStamp.length() + 1);
                     try {

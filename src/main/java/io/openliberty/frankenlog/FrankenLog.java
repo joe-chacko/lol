@@ -24,12 +24,26 @@ public class FrankenLog {
     }
 
     @Command(name = "stitch", description = "Unify and output concurrent logs")
-    void stitch(@Parameters(paramLabel = "files", arity = "1..*", description = "The paths to the files you would like to merge") List<File> files) {
-        var logFiles = files.stream().map(LogFile::new).collect(Collectors.toUnmodifiableList());
+    void stitch(
+            @Parameters(
+                    paramLabel = "logFiles",
+                    arity = "1..*",
+                    converter = LogFile.Converter.class,
+                    description = "The paths to the files you would like to merge"
+            )
+            List<LogFile> logFiles) {
         logFiles.forEach(file -> System.out.println(file.shortname + " = " + file.filename));
         merge(logFiles.stream().map(LogFile::getStanzas))
                 .map(Stanza::getDisplayText)
                 .forEach(System.out::println);
+    }
+
+    @Command(name = "stab", description = "Guess the inputted log's date format")
+    void stab(@Parameters(paramLabel = "files", arity = "1..*", description = "The paths to the files you would like to guess the date format for") List<File> files) {
+        files.forEach(this::stab);
+    }
+
+    private void stab(File file) {
     }
 
 }

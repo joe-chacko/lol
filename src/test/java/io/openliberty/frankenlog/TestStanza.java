@@ -20,15 +20,12 @@ import test.model.ExpectedStanza;
 import test.util.Streams;
 
 import java.io.IOException;
-import java.io.StringReader;
 import java.time.format.DateTimeParseException;
 import java.util.stream.Stream;
 
 import static io.openliberty.frankenlog.LogFile.getTimeStamp;
 import static io.openliberty.frankenlog.LogFile.parseTime;
 import static java.util.stream.Collectors.joining;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -81,9 +78,13 @@ public class TestStanza {
         assertThrows(DateTimeParseException.class, () -> parseTime(getTimeStamp(lines[1])));
         assertThrows(DateTimeParseException.class, () -> parseTime(getTimeStamp(lines[2])));
         assertNotNull(parseTime(getTimeStamp(lines[3])));
+        assertNotNull(parseTime(getTimeStamp(lines[3]), LogFile.TimestampFormat.MDY));
         assertNotNull(parseTime(getTimeStamp(lines[4])));
+        assertNotNull(parseTime(getTimeStamp(lines[4]), LogFile.TimestampFormat.DMY));
+        System.out.println(parseTime(getTimeStamp(lines[3])));
+//
+//        LogFile sr = new LogFile("trace.log", new StringReader(log));
+//        assertThat(sr.next().getLines(), is(3));
 
-        LogFile sr = new LogFile("trace.log", new StringReader(log));
-        assertThat(sr.next().getLines(), is(3));
     }
 }
