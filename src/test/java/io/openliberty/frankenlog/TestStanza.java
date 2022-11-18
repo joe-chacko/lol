@@ -82,22 +82,5 @@ public class TestStanza {
         assertNotNull(MDY.parse(getTimeStamp(lines[3])));
         assertNotNull(NONE.parse(getTimeStamp(lines[4])));
         assertNotNull(DMY.parse(getTimeStamp(lines[4])));
-
-        Pattern p = Pattern.compile("(.*):([YMD]{3})$");
-        Pattern p2 = Pattern.compile(".");
-        Matcher m = p.matcher("mylog.log:DMY");
-        Matcher m2 = p2.matcher("HHhh22");
-        if (m.find()) {
-            System.out.println("TEST: " + m2.group());
-            String filename = m.group(1);
-            String t = m.group(2);
-//            LogReader.TimestampFormat t = LogReader.TimestampFormat.valueOf(m.group(2));
-            System.out.println("Filename = " + filename);
-            System.out.println("TimeStamp = " + t);
-        }
-//
-//        LogReader sr = new LogReader("trace.log", new StringReader(log));
-//        assertThat(sr.next().getLines(), is(3));
-
     }
 }
