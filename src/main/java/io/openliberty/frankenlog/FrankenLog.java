@@ -87,7 +87,7 @@ public class FrankenLog {
                 ln.addAndGet(prev.getText().split("\r\n|\r|\n").length);
                 if (!prev.isPreamble()) {
                     Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
-                    if(timeDiff.compareTo(largestTimeGap.get())>0){
+                    if(timeDiff.abs().compareTo(largestTimeGap.get())>0){
                         lines.set(String.format("Line %d: %s\nLine %d: %s", ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText()));
                         largestTimeGap.set(timeDiff);
                     } else if (timeDiff.compareTo(largestTimeGap.get())==0) {
@@ -100,7 +100,7 @@ public class FrankenLog {
         if (lines.get().isEmpty()) {
             System.out.println("Log file does not have two lines with timestamps");
         } else {
-            System.out.println(lines + "\n\nTime Gap = " + largestTimeGap);
+            System.out.println(lines + "\n\nTime Gap = " + humanReadableFormat(largestTimeGap.get()));
         }
     }
 
@@ -110,14 +110,21 @@ public class FrankenLog {
         new LogReader(lf).getStanzas().forEach(st ->{
             Stanza prev = prevStanza.get();
             if(prev!=null){
-                ln.addAndGet(prev.getText().split("\r\n|\r|\n").length);
+                ln.addAndGet(prev.getText().split("\r\n|\r|\n").length); //Add the number lines in the stanza to the line number counter variable
                 if(!prev.isPreamble()){
                     Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
-                    if(timeDiff.compareTo(minTimeGap)>=0)
-                        System.out.println(String.format("Line %d: %s\nLine %d: %s\n", ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText()));
+                    if(timeDiff.abs().compareTo(minTimeGap)>=0)
+                        System.out.println(String.format("Line %d: %s\nLine %d: %s\nTime Gap: %s\n", ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText(), humanReadableFormat(timeDiff)));
                 }
             }
             prevStanza.set(st);
         });
+    }
+
+    String humanReadableFormat(Duration duration) {
+        return duration.toString()
+                .substring(2)
+                .replaceAll("(\\d[HMS])(?!$)", "$1 ")
+                .toLowerCase();
     }
 }
