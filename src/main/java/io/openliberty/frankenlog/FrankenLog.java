@@ -8,8 +8,8 @@ import picocli.CommandLine.Parameters;
 import picocli.CommandLine.PropertiesDefaultProvider;
 
 import java.time.Duration;
-import java.time.Instant;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static io.openliberty.frankenlog.MergeUtil.merge;
@@ -77,18 +77,22 @@ public class FrankenLog {
     }
 
     private void largestTimeGap(LogFile lf){
+        AtomicInteger ln = new AtomicInteger();
         AtomicReference<Duration> largestTimeGap = new AtomicReference<>(Duration.ofSeconds(0));
         AtomicReference<String> lines = new AtomicReference<>("Log file does not have two lines with timestamps");
         AtomicReference<Stanza> prevStanza = new AtomicReference<>();
         new LogReader(lf).getStanzas().forEach(st ->{
             Stanza prev = prevStanza.get();
-            if(prev !=null && !prev.isPreamble()) {
-                Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
-                if(timeDiff.compareTo(largestTimeGap.get())>0){
-                    lines.set(prev.getDisplayText() + "\n" + st.getDisplayText());
-                    largestTimeGap.set(timeDiff);
-                } else if (timeDiff.compareTo(largestTimeGap.get())==0) {
-                    lines.set(lines.get() + "\n" + prev.getDisplayText() + "\n\n" + st.getDisplayText());
+            if(prev!=null) {
+                ln.addAndGet(prev.getText().split("\r\n|\r|\n").length);
+                if (!prev.isPreamble()) {
+                    Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
+                    if(timeDiff.compareTo(largestTimeGap.get())>0){
+                        lines.set(String.format("Line %d: %s\nLine %d: %s", ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText()));
+                        largestTimeGap.set(timeDiff);
+                    } else if (timeDiff.compareTo(largestTimeGap.get())==0) {
+                        lines.set(String.format("%s\n\nLine %d: %s\nLine %d: %s", lines.get(), ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText()));
+                    }
                 }
             }
             prevStanza.set(st);
@@ -96,17 +100,22 @@ public class FrankenLog {
         if (lines.get().isEmpty()) {
             System.out.println("Log file does not have two lines with timestamps");
         } else {
-            System.out.println(lines.get() + "\nTime Gap = " + largestTimeGap);
+            System.out.println(lines + "\n\nTime Gap = " + largestTimeGap);
         }
     }
 
     private void minimumTimeGap(LogFile lf, Duration minTimeGap){
+        AtomicInteger ln = new AtomicInteger();
         AtomicReference<Stanza> prevStanza = new AtomicReference<>();
         new LogReader(lf).getStanzas().forEach(st ->{
             Stanza prev = prevStanza.get();
-            if(prev !=null && !prev.isPreamble()) {
-                Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
-                if(timeDiff.compareTo(minTimeGap)>=0) System.out.println(prev.getDisplayText() + "\n" + st.getDisplayText() + "\n");
+            if(prev!=null){
+                ln.addAndGet(prev.getText().split("\r\n|\r|\n").length);
+                if(!prev.isPreamble()){
+                    Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
+                    if(timeDiff.compareTo(minTimeGap)>=0)
+                        System.out.println(String.format("Line %d: %s\nLine %d: %s\n", ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText()));
+                }
             }
             prevStanza.set(st);
         });
