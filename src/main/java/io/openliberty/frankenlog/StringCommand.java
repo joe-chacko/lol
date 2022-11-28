@@ -1,6 +1,10 @@
 package io.openliberty.frankenlog;
 
-import picocli.CommandLine.*;
+import picocli.CommandLine.ArgGroup;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.Parameters;
+import picocli.CommandLine.ParentCommand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,26 +48,15 @@ public class StringCommand implements Callable<Integer> {
     }
 
     interface ContextPrinter {
-        void peek(Stanza stanza);
-
-        void match(Stanza stanza);
-
-        void printRemaining();
+        default boolean peek(Stanza stanza) { return false; }
+        default void match(Stanza stanza) {}
+        default void printRemaining() {}
 
         static void print(Stanza stanza) {
             System.out.println(faint.on() + stanza + faint.off());
         }
 
-        ContextPrinter NULL_BUFFER = new ContextPrinter() {
-            public void peek(Stanza stanza) {
-            }
-
-            public void match(Stanza stanza) {
-            }
-
-            public void printRemaining() {
-            }
-        };
+        ContextPrinter NULL_BUFFER = new ContextPrinter() {};
 
         class BeforeContext implements ContextPrinter {
             final FifoFixedSizeQueue<Stanza> queue;
@@ -73,16 +66,14 @@ public class StringCommand implements Callable<Integer> {
                 queue = new FifoFixedSizeQueue<>(num + 1);
             }
 
-            public void peek(Stanza stanza) {
+            public boolean peek(Stanza stanza) {
                 queue.add(stanza);
+                return false;
             }
 
             public void match(Stanza stanza) {
                 queue.stream().filter(not(stanza::equals)).forEach(ContextPrinter::print);
                 queue.clear();
-            }
-
-            public void printRemaining() {
             }
         }
 
@@ -96,14 +87,15 @@ public class StringCommand implements Callable<Integer> {
                 list = new ArrayList<>(num);
             }
 
-            public void peek(Stanza stanza) {
+            public boolean peek(Stanza stanza) {
                 if (linesToPrint > 0) {
                     list.add(stanza);
                     linesToPrint--;
-                } else {
-                    list.forEach(ContextPrinter::print);
-                    list.clear();
+                    return true;
                 }
+                list.forEach(ContextPrinter::print);
+                list.clear();
+                return false;
             }
 
             public void match(Stanza stanza) {
@@ -132,9 +124,8 @@ public class StringCommand implements Callable<Integer> {
                 bc = new BeforeContext(num);
             }
 
-            public void peek(Stanza stanza) {
-                ac.peek(stanza);
-                bc.peek(stanza);
+            public boolean peek(Stanza stanza) {
+                return ac.peek(stanza) || bc.peek(stanza);
             }
 
             public void match(Stanza stanza) {
@@ -142,9 +133,7 @@ public class StringCommand implements Callable<Integer> {
                 bc.match(stanza);
             }
 
-            public void printRemaining() {
-                ac.printRemaining();
-            }
+            public void printRemaining() { ac.printRemaining(); }
         }
 
         static ContextPrinter of(ContextOption option) {

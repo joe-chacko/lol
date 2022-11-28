@@ -1,7 +1,11 @@
 package io.openliberty.frankenlog;
 
 import picocli.CommandLine;
-import picocli.CommandLine.*;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.HelpCommand;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.Parameters;
+import picocli.CommandLine.PropertiesDefaultProvider;
 
 import java.time.Duration;
 import java.util.List;
