@@ -13,20 +13,14 @@
 
 package io.openliberty.frankenlog;
 
-import picocli.CommandLine;
-
-import java.io.*;
-import java.text.ParsePosition;
+import java.io.BufferedReader;
+import java.io.IOError;
+import java.io.IOException;
 import java.time.Instant;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 class LogReader implements AutoCloseable {
@@ -41,12 +35,11 @@ class LogReader implements AutoCloseable {
         this.logFile = lf;
         this.in = new BufferedReader(lf.getReader());
     }
+
     static String getTimeStamp(String text) {
         int closeBracketIndex = text.indexOf("] ");
         return text.substring(0, closeBracketIndex + 1);
     }
-
-
 
 
     Stanza next() {

@@ -2,8 +2,8 @@ package io.openliberty.frankenlog;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Option;
 import picocli.CommandLine.HelpCommand;
+import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 import picocli.CommandLine.PropertiesDefaultProvider;
 
@@ -14,7 +14,12 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static io.openliberty.frankenlog.MergeUtil.merge;
 
-@Command(name = "franken", mixinStandardHelpOptions = true, description = "FrankenLog - Unify concurrent logs into a coherent whole", version = "Frankenlog 1.0", subcommands = HelpCommand.class, // other subcommands are annotated methods
+@Command(
+        name = "franken",
+        mixinStandardHelpOptions = true,
+        description = "FrankenLog - Unify concurrent logs into a coherent whole",
+        version = "Frankenlog 1.0",
+        subcommands = {HelpCommand.class, StringCommand.class}, // other subcommands are annotated methods
         defaultValueProvider = PropertiesDefaultProvider.class)
 public class FrankenLog {
     public static void main(String... args) {
@@ -70,28 +75,28 @@ public class FrankenLog {
     }
 
     private void stab(LogFile lf) {
-        Stanza stanza = new LogReader(lf).getStanzas().filter(e-> !e.isPreamble()).findAny().orElse(null);
+        Stanza stanza = new LogReader(lf).getStanzas().filter(e -> !e.isPreamble()).findAny().orElse(null);
         System.out.println(stanza != null ?
                 lf.filename + " -> " + LogFile.TimestampFormat.guessTimeStamp(stanza.getUnformattedTime()) :
                 lf.filename + " -> No Timestamps found");
     }
 
-    private void largestTimeGap(LogFile lf){
+    private void largestTimeGap(LogFile lf) {
         AtomicInteger ln = new AtomicInteger();
         AtomicReference<Duration> largestTimeGap = new AtomicReference<>(Duration.ofSeconds(0));
         AtomicReference<String> lines = new AtomicReference<>("Log file does not have two lines with timestamps");
         AtomicReference<Stanza> prevStanza = new AtomicReference<>();
-        new LogReader(lf).getStanzas().forEach(st ->{
+        new LogReader(lf).getStanzas().forEach(st -> {
             Stanza prev = prevStanza.get();
-            if(prev!=null) {
+            if (prev != null) {
                 ln.addAndGet(prev.getText().split("\r\n|\r|\n").length);
                 if (!prev.isPreamble()) {
                     Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
-                    if(timeDiff.abs().compareTo(largestTimeGap.get())>0){
-                        lines.set(String.format("Line %d: %s\nLine %d: %s", ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText()));
+                    if (timeDiff.abs().compareTo(largestTimeGap.get()) > 0) {
+                        lines.set(String.format("Line %d: %s\nLine %d: %s", ln.get(), prev.getDisplayText(), ln.get() + 1, st.getDisplayText()));
                         largestTimeGap.set(timeDiff);
-                    } else if (timeDiff.compareTo(largestTimeGap.get())==0) {
-                        lines.set(String.format("%s\n\nLine %d: %s\nLine %d: %s", lines.get(), ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText()));
+                    } else if (timeDiff.compareTo(largestTimeGap.get()) == 0) {
+                        lines.set(String.format("%s\n\nLine %d: %s\nLine %d: %s", lines.get(), ln.get(), prev.getDisplayText(), ln.get() + 1, st.getDisplayText()));
                     }
                 }
             }
@@ -104,17 +109,17 @@ public class FrankenLog {
         }
     }
 
-    private void minimumTimeGap(LogFile lf, Duration minTimeGap){
+    private void minimumTimeGap(LogFile lf, Duration minTimeGap) {
         AtomicInteger ln = new AtomicInteger();
         AtomicReference<Stanza> prevStanza = new AtomicReference<>();
-        new LogReader(lf).getStanzas().forEach(st ->{
+        new LogReader(lf).getStanzas().forEach(st -> {
             Stanza prev = prevStanza.get();
-            if(prev!=null){
+            if (prev != null) {
                 ln.addAndGet(prev.getText().split("\r\n|\r|\n").length); //Add the number lines in the stanza to the line number counter variable
-                if(!prev.isPreamble()){
+                if (!prev.isPreamble()) {
                     Duration timeDiff = Duration.between(prev.getTime(), st.getTime());
-                    if(timeDiff.abs().compareTo(minTimeGap)>=0)
-                        System.out.println(String.format("Line %d: %s\nLine %d: %s\nTime Gap: %s\n", ln.get(), prev.getDisplayText(), ln.get()+1, st.getDisplayText(), humanReadableFormat(timeDiff)));
+                    if (timeDiff.abs().compareTo(minTimeGap) >= 0)
+                        System.out.printf("Line %d: %s\nLine %d: %s\nTime Gap: %s\n\n", ln.get(), prev.getDisplayText(), ln.get() + 1, st.getDisplayText(), humanReadableFormat(timeDiff));
                 }
             }
             prevStanza.set(st);

@@ -88,6 +88,10 @@ public class LogFile {
         this(filename, TimestampFormat.NONE);
     }
 
+    Stream<Stanza> stream() {
+        return new LogReader(this).getStanzas();
+    }
+
     Reader getReader() {
         try {
             return new FileReader(filename);
