@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BASE_DIR="$(dirname $(realpath "$0"))"
-SHELL_SCRIPT="$BASE_DIR/build/install/franken/bin/franken"
+SHELL_SCRIPT="$BASE_DIR/build/install/lol/bin/lol"
 
 # Use a subshell in the base dir just in case the project needs to be built
 (
