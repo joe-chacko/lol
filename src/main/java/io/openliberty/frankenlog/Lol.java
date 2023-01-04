@@ -21,10 +21,10 @@ import static io.openliberty.frankenlog.MergeUtil.merge;
         version = "Logs of Open Liberty 1.0",
         subcommands = {HelpCommand.class, GrepCommand.class}, // other subcommands are annotated methods
         defaultValueProvider = PropertiesDefaultProvider.class)
-public class FrankenLog {
+public class Lol {
     public static void main(String... args) {
-        FrankenLog frankenlog = new FrankenLog();
-        CommandLine commandLine = new CommandLine(frankenlog);
+        Lol lol = new Lol();
+        CommandLine commandLine = new CommandLine(lol);
         int exitCode = commandLine.execute(args);
         System.exit(exitCode);
     }
