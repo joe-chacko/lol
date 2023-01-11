@@ -14,10 +14,10 @@ import java.util.regex.Pattern;
 import static java.util.function.Predicate.not;
 import static picocli.CommandLine.Help.Ansi.Style.faint;
 
-@Command(name = "string", description = "Search for lines with string patterns in your log file ")
-public class StringCommand implements Callable<Integer> {
+@Command(name = "grep", description = "Search for lines with string patterns in your log file ")
+public class GrepCommand implements Callable<Integer> {
     @ParentCommand
-    private FrankenLog frankenLog;
+    private Lol frankenLog;
     @ArgGroup
     private ContextOption contextOption;
     @Parameters(paramLabel = "pattern", description = "The regex pattern you want to find in the logfile")
@@ -29,7 +29,7 @@ public class StringCommand implements Callable<Integer> {
     )
     private LogFile logFile;
 
-    StringCommand() {
+    GrepCommand() {
     }
 
     @Override

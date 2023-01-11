@@ -15,22 +15,22 @@ import java.util.concurrent.atomic.AtomicReference;
 import static io.openliberty.frankenlog.MergeUtil.merge;
 
 @Command(
-        name = "franken",
+        name = "lol",
         mixinStandardHelpOptions = true,
-        description = "FrankenLog - Unify concurrent logs into a coherent whole",
-        version = "Frankenlog 1.0",
-        subcommands = {HelpCommand.class, StringCommand.class}, // other subcommands are annotated methods
+        description = "Logs of Open Liberty - Unify concurrent logs into a coherent whole",
+        version = "Logs of Open Liberty 1.0",
+        subcommands = {HelpCommand.class, GrepCommand.class}, // other subcommands are annotated methods
         defaultValueProvider = PropertiesDefaultProvider.class)
-public class FrankenLog {
+public class Lol {
     public static void main(String... args) {
-        FrankenLog frankenlog = new FrankenLog();
-        CommandLine commandLine = new CommandLine(frankenlog);
+        Lol lol = new Lol();
+        CommandLine commandLine = new CommandLine(lol);
         int exitCode = commandLine.execute(args);
         System.exit(exitCode);
     }
 
-    @Command(name = "stitch", description = "Unify and output concurrent logs")
-    void stitch(
+    @Command(name = "gather", description = "Unify and output concurrent logs")
+    void gather(
             @Parameters(
                     paramLabel = "logReaders",
                     arity = "1..*",
@@ -44,8 +44,8 @@ public class FrankenLog {
                 .forEach(System.out::println);
     }
 
-    @Command(name = "stuck", description = "Find the lines in you log with a time gap bigger than your inputted time (-t). If no time is entered then the lines with the biggest time gap will be returned")
-    void stuck(
+    @Command(name = "gap", description = "Find the lines in you log with a time gap bigger than your inputted time (-t). If no time is entered then the lines with the biggest time gap will be returned")
+    void gap(
             @Option(names = {"-t", "--time-gap"}, defaultValue = "-1", description = "The minimum seconds gap between two lines for them to be displayed")
             long timeGap,
             @Parameters(
@@ -62,8 +62,8 @@ public class FrankenLog {
         }
     }
 
-    @Command(name = "stab", description = "Guess the inputted log's date format")
-    void stab(
+    @Command(name = "grok", description = "Guess the inputted log's date format")
+    void grok(
             @Parameters(
                     paramLabel = "files",
                     arity = "1..*",
@@ -71,10 +71,10 @@ public class FrankenLog {
                     description = "The paths to the files you would like to guess the date format for"
             )
             List<LogFile> files) {
-        files.forEach(this::stab);
+        files.forEach(this::grok);
     }
 
-    private void stab(LogFile lf) {
+    private void grok(LogFile lf) {
         Stanza stanza = new LogReader(lf).getStanzas().filter(e -> !e.isPreamble()).findAny().orElse(null);
         System.out.println(stanza != null ?
                 lf.filename + " -> " + LogFile.TimestampFormat.guessTimeStamp(stanza.getUnformattedTime()) :
