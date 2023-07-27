@@ -15,7 +15,7 @@ plugins {
 }
 
 ext {
-    javaMainClass = "io.openliberty.frankenlog.FrankenLog"
+    javaMainClass = "io.openliberty.frankenlog.Lol"
 }
 
 group 'com.ibm.websphere'
